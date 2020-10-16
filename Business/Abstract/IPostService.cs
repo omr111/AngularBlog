@@ -1,0 +1,22 @@
+﻿using Core.DataResult.Abstract;
+using Entities.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using System.Linq;
+using System.Text;
+
+
+namespace Business.Abstract
+{
+    public interface   IPostService
+    {
+        IDataResult<List<Post>> getAll();
+        IDataResult<List<Post>> getAllByCategoryId(int catId);
+        IDataResult<Post> getOneById(int id);
+        IResult addPost(Post Post);
+        IResult updatePost(Post Post);
+        IResult deletePostById(int id);
+        IResult deletePostByEntity(Post Post);
+    }
+}
