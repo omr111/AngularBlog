@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5h/WpHIjt6EdA4FqT8egb+xca2FvU0VofObOKVWHgjSd+8Mvkr/2cN1h/9Fb2CJ04vDuEbxA/EzMpwjowi37sg==",
+  "dgSpecHash": "UK1TgWrrZv0x1FmGwOj9H7JlPu4/ZpAzFmYY869z1HiSEUiVogaAE09WLMNyN9UCHjTRmCD9RHydv3fqFDdh/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "D:\\Github\\AngularBlog\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\autofac\\5.1.0\\autofac.5.1.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\autofac.extensions.dependencyinjection\\6.0.0\\autofac.extensions.dependencyinjection.6.0.0.nupkg.sha512",

@@ -27,7 +27,15 @@
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./assets/CommonJs/tether.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./assets/CommonJs/layerslider.js",
+              "./assets/CommonJs/scripts.js"
+              
+            ]
           },
           "configurations": {
             "production": {

@@ -18,12 +18,12 @@ namespace WebApi.Controllers
         {
             _Post = Post;
         }
-        [HttpGet("getall")]
+        [HttpGet("getall/{pageno}/{pagecount}")]
     
-        public ActionResult getAll()
+        public ActionResult getAll(int pageNo=1,int pageCount=5)
         {
-            var result = _Post.getAll();
-            result.data.ToList();
+            var result = _Post.getAll().Skip(pageCount*(pageNo-1)).Take(pageCount).ToList();
+            
 
             return Ok(result);
         }

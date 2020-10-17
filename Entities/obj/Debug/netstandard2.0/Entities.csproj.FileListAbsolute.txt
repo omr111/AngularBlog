@@ -25,3 +25,12 @@ C:\Users\LENOVO\Desktop\myblog\abcCoreProject\Entities\obj\Debug\netstandard2.0\
 C:\Users\LENOVO\Desktop\myblog\abcCoreProject\Entities\obj\Debug\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
 C:\Users\LENOVO\Desktop\myblog\abcCoreProject\Entities\obj\Debug\netstandard2.0\Entities.dll
 C:\Users\LENOVO\Desktop\myblog\abcCoreProject\Entities\obj\Debug\netstandard2.0\Entities.pdb
+D:\Github\AngularBlog\Entities\bin\Debug\netstandard2.0\Entities.deps.json
+D:\Github\AngularBlog\Entities\bin\Debug\netstandard2.0\Entities.dll
+D:\Github\AngularBlog\Entities\bin\Debug\netstandard2.0\Entities.pdb
+D:\Github\AngularBlog\Entities\obj\Debug\netstandard2.0\Entities.csprojAssemblyReference.cache
+D:\Github\AngularBlog\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfoInputs.cache
+D:\Github\AngularBlog\Entities\obj\Debug\netstandard2.0\Entities.AssemblyInfo.cs
+D:\Github\AngularBlog\Entities\obj\Debug\netstandard2.0\Entities.csproj.CoreCompileInputs.cache
+D:\Github\AngularBlog\Entities\obj\Debug\netstandard2.0\Entities.dll
+D:\Github\AngularBlog\Entities\obj\Debug\netstandard2.0\Entities.pdb

@@ -6255,11 +6255,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj",
+      "projectUniqueName": "D:\\Github\\AngularBlog\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj",
+      "projectPath": "D:\\Github\\AngularBlog\\Entities\\Entities.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\obj\\",
+      "outputPath": "D:\\Github\\AngularBlog\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

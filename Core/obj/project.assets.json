@@ -6884,11 +6884,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Core\\Core.csproj",
+      "projectUniqueName": "D:\\Github\\AngularBlog\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Core\\Core.csproj",
+      "projectPath": "D:\\Github\\AngularBlog\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Core\\obj\\",
+      "outputPath": "D:\\Github\\AngularBlog\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -6909,8 +6909,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj"
+            "D:\\Github\\AngularBlog\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\Github\\AngularBlog\\Entities\\Entities.csproj"
             }
           }
         }

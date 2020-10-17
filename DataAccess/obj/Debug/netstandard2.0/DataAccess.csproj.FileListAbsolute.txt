@@ -40,3 +40,17 @@ C:\Users\LENOVO\Desktop\myblog\abcCoreProject\DataAccess\bin\Debug\netstandard2.
 C:\Users\LENOVO\Desktop\myblog\abcCoreProject\DataAccess\bin\Debug\netstandard2.0\Core.pdb
 C:\Users\LENOVO\Desktop\myblog\abcCoreProject\DataAccess\bin\Debug\netstandard2.0\Entities.pdb
 C:\Users\LENOVO\Desktop\myblog\abcCoreProject\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
+D:\Github\AngularBlog\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+D:\Github\AngularBlog\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+D:\Github\AngularBlog\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+D:\Github\AngularBlog\DataAccess\bin\Debug\netstandard2.0\Core.dll
+D:\Github\AngularBlog\DataAccess\bin\Debug\netstandard2.0\Entities.dll
+D:\Github\AngularBlog\DataAccess\bin\Debug\netstandard2.0\Core.pdb
+D:\Github\AngularBlog\DataAccess\bin\Debug\netstandard2.0\Entities.pdb
+D:\Github\AngularBlog\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+D:\Github\AngularBlog\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+D:\Github\AngularBlog\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+D:\Github\AngularBlog\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Github\AngularBlog\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
+D:\Github\AngularBlog\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+D:\Github\AngularBlog\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb

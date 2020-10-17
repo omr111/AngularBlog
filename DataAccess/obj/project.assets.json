@@ -6905,11 +6905,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "D:\\Github\\AngularBlog\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\DataAccess\\DataAccess.csproj",
+      "projectPath": "D:\\Github\\AngularBlog\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\DataAccess\\obj\\",
+      "outputPath": "D:\\Github\\AngularBlog\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -6930,11 +6930,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Core\\Core.csproj"
+            "D:\\Github\\AngularBlog\\Core\\Core.csproj": {
+              "projectPath": "D:\\Github\\AngularBlog\\Core\\Core.csproj"
             },
-            "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj"
+            "D:\\Github\\AngularBlog\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\Github\\AngularBlog\\Entities\\Entities.csproj"
             }
           }
         }

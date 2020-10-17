@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "++rMy3s5XnV2uW5fpMUoPnaqdN1M6V0rul41pbWTrKRT3smmmW8pIx7h50N7yGBN4Neex4V7a4MJGD6Sk8M/wQ==",
+  "dgSpecHash": "E+CUxVyzVIApusfxbx+gF72UaIO+6m0ElSthwRAz5VOudkLwMKzPN7t62E+JCUtnLJRSObFAMU92H6rDy81/Mg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\WebApi\\WebApi.csproj",
+  "projectFilePath": "D:\\Github\\AngularBlog\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\autofac\\5.2.0\\autofac.5.2.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\autofac.extensions.dependencyinjection\\6.0.0\\autofac.extensions.dependencyinjection.6.0.0.nupkg.sha512",

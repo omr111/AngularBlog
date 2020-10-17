@@ -8164,11 +8164,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "D:\\Github\\AngularBlog\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\WebApi\\WebApi.csproj",
+      "projectPath": "D:\\Github\\AngularBlog\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\WebApi\\obj\\",
+      "outputPath": "D:\\Github\\AngularBlog\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -8189,14 +8189,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Business\\Business.csproj"
+            "D:\\Github\\AngularBlog\\Business\\Business.csproj": {
+              "projectPath": "D:\\Github\\AngularBlog\\Business\\Business.csproj"
             },
-            "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Core\\Core.csproj"
+            "D:\\Github\\AngularBlog\\Core\\Core.csproj": {
+              "projectPath": "D:\\Github\\AngularBlog\\Core\\Core.csproj"
             },
-            "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj"
+            "D:\\Github\\AngularBlog\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\Github\\AngularBlog\\Entities\\Entities.csproj"
             }
           }
         }

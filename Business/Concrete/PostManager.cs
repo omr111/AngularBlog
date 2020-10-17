@@ -44,13 +44,13 @@ namespace Business.Concrete
         [CacheAspect()]
         [PerformanceAspect(5)] //Post getirilme işlemi 5 saniyeden fazla sürerse debug'a yazacak
         [LogAspect(typeof(DatabaseLogger))] //dosyaya loglama yapar
-        public IDataResult<List<Post>> getAll()
+        public IQueryable<Post> getAll()
         {
-            return new DataSuccessResult<List<Post>>(_Post.getAll());
+            return (_Post.getAll());
         }
 
         [CacheAspect()]
-        public IDataResult<List<Post>> getAllByCategoryId(int catId)
+        public IQueryable<Post> getAllByCategoryId(int catId)
         {
             throw new NotImplementedException();
         }

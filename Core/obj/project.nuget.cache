@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QYtyaEXnUrXfu+zD+2VCDX6AWttKhNYzH2fEn2mpUvpicA+hU0roe4NJPn0nCVsbNLnCWY6CBGfeD0O+EDhL0g==",
+  "dgSpecHash": "KgwNrHJmOaFVyxfnEbnzJCKTkKTpBXBoMAYUsKUyyHzQPdNcegKtuaNBSs3qfC+btC1bxEc0wKzUAybnrW9STQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Core\\Core.csproj",
+  "projectFilePath": "D:\\Github\\AngularBlog\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\autofac\\5.1.0\\autofac.5.1.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\autofac.extensions.dependencyinjection\\6.0.0\\autofac.extensions.dependencyinjection.6.0.0.nupkg.sha512",

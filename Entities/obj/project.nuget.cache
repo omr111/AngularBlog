@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9e4HBonFErJMsTW+L2LYz9bKZSpkzGjJ7Hph+s91UX7Nk2CoMCy51Scwn+PzX5k1TZVQNy6jZf2B/M9ZtrFvNg==",
+  "dgSpecHash": "bnZ2Wt0OpTMXlqHdjqWzxPkhWEgCddrqDtsEQTJKfZVc7nFAzSWMGuNE1TT99073s+NxtA82p1w/pC1LOAdYsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Entities\\Entities.csproj",
+  "projectFilePath": "D:\\Github\\AngularBlog\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

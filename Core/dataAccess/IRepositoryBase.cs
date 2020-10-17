@@ -9,7 +9,7 @@ namespace Core.dataAccess
 {
     public interface IRepositoryBase<T> where T:class,new() 
     {
-        List<T> getAll(Expression<Func<T, bool>> filter = null);
+        IQueryable<T> getAll(Expression<Func<T, bool>> filter = null);
         T getOne(Expression<Func<T, bool>> filter);
         void add(T entity);
         void delete(T entity);

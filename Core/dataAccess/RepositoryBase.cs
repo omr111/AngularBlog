@@ -27,14 +27,14 @@ namespace Core.dataAccess
             }
         }
 
-        public List<T> getAll(Expression<Func<T, bool>> filter = null)
+        public IQueryable<T> getAll(Expression<Func<T, bool>> filter = null)
         {
             using (var ctx = new TContext())
             {
                 if (filter != null)
-                    return ctx.Set<T>().Where(filter).ToList();
+                    return ctx.Set<T>().Where(filter);
                 else
-                    return ctx.Set<T>().ToList();
+                    return ctx.Set<T>();
              
             }
         }

@@ -6930,11 +6930,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Business\\Business.csproj",
+      "projectUniqueName": "D:\\Github\\AngularBlog\\Business\\Business.csproj",
       "projectName": "Business",
-      "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Business\\Business.csproj",
+      "projectPath": "D:\\Github\\AngularBlog\\Business\\Business.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\Business\\obj\\",
+      "outputPath": "D:\\Github\\AngularBlog\\Business\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -6955,8 +6955,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\LENOVO\\Desktop\\AngularBlog\\DataAccess\\DataAccess.csproj"
+            "D:\\Github\\AngularBlog\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\Github\\AngularBlog\\DataAccess\\DataAccess.csproj"
             }
           }
         }
