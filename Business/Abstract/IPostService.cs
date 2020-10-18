@@ -11,7 +11,7 @@ namespace Business.Abstract
 {
     public interface   IPostService
     {
-        IQueryable<Post> getAll();
+        List<Post> getAll();
         IQueryable<Post> getAllByCategoryId(int catId);
         IDataResult<Post> getOneById(int id);
         IResult addPost(Post Post);

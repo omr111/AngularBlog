@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Entities.Concrete
 {
-    public partial class UserMessage
+    public  class UserMessage
     {
         public int Id { get; set; }
         public int SenderUserId { get; set; }

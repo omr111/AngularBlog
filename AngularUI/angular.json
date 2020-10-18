@@ -19,23 +19,17 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.css"
+              "src/styles.css",
+              "./src/app/Layouts/mainLayout/mainCss/CommonCss/ionicons.css",
+
+              "./src/app/Layouts/mainLayout/mainCss/HomePageCss/styles.css",
+              "./src/app/Layouts/mainLayout/mainCss/HomePageCss/responsive.css",
+
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"
             ],
-            "scripts": [
-              
-              "./node_modules/jquery/dist/jquery.min.js",
-              "./assets/CommonJs/tether.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "./assets/CommonJs/layerslider.js",
-              "./assets/CommonJs/scripts.js"
-              
-            ]
+            "scripts": ["./node_modules/jquery/dist/jquery.min.js"]
           },
           "configurations": {
             "production": {
@@ -88,15 +82,20 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              
+              "./app/Layouts/mainLayout/mainJs/tether.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./app/Layouts/mainLayout/mainJs/layerslider.js",
+         
+              "./app/Layouts/mainLayout/mainJs/scripts.js"
+            ]
           }
         },
         "lint": {
@@ -107,9 +106,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {

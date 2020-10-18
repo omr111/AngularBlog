@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Entities.Concrete
 {
-    public partial class PostTag
+    public  class PostTag
     {
         public int PostId { get; set; }
         public int TagId { get; set; }

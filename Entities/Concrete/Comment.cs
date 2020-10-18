@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Entities.Concrete
 {
-    public partial class Comment
+    public  class Comment
     {
         public int Id { get; set; }
         public int PostId { get; set; }

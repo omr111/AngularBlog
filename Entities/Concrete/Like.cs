@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Entities.Concrete
 {
-    public partial class Like
+    public  class Like
     {
         public int Id { get; set; }
         public int PostId { get; set; }

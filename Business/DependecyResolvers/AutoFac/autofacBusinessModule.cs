@@ -20,7 +20,7 @@ namespace Business.DependecyResolvers.AutoFac
             builder.RegisterType<AddManager>().As<IAddService>();
             builder.RegisterType<AddDal>().As<IAddDal>();
 
-            builder.RegisterType<CategoryBll>().As<ICategoryService>();
+            builder.RegisterType<CategoryManager>().As<ICategoryService>();
             builder.RegisterType<CategoryDal>().As<ICategoryDal>();
 
             builder.RegisterType<CommentManager>().As<ICommentService>();

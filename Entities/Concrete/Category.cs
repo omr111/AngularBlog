@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Entities.Concrete
 {
-    public partial class Category
+    public  class Category
     {
         public Category()
         {

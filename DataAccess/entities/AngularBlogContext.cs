@@ -6,18 +6,15 @@ using System.Text;
 
 namespace DataAccess.entities
 {
-    public partial class AngularBlogContext : DbContext
+    public  class AngularBlogContext : DbContext
     {
-        public AngularBlogContext()
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=AngularBlog;Integrated Security=True;MultipleActiveResultSets=True;");
         }
 
-        public AngularBlogContext(DbContextOptions<AngularBlogContext> options)
-            : base(options)
-        {
-        }
-
-        public  DbSet<Add> Adds { get; set; }
+        public DbSet<Add> Adds { get; set; }
         public  DbSet<Category> categories { get; set; }
         public  DbSet<Comment> Comments { get; set; }
         public  DbSet<Contact> Contacts { get; set; }
@@ -32,15 +29,7 @@ namespace DataAccess.entities
         public  DbSet<UserMessage> UserMessages { get; set; }
         public  DbSet<user> users { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-
-                optionsBuilder.UseSqlServer("Server=.;Database=AngularBlog;Trusted_Connection=True;");
-            }
-        }
-
+      
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Add>(entity =>
@@ -278,9 +267,9 @@ namespace DataAccess.entities
                     .HasMaxLength(100);
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+       
     }
 }

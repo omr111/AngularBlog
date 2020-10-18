@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Entities.Concrete
 {
-    public partial class UserContactInfo
+    public  class UserContactInfo
     {
         public int Id { get; set; }
         public string ContactType { get; set; }

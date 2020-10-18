@@ -44,9 +44,9 @@ namespace Business.Concrete
         [CacheAspect()]
         [PerformanceAspect(5)] //Post getirilme işlemi 5 saniyeden fazla sürerse debug'a yazacak
         [LogAspect(typeof(DatabaseLogger))] //dosyaya loglama yapar
-        public IQueryable<Post> getAll()
+        public List<Post> getAll()
         {
-            return (_Post.getAll());
+            return (_Post.getAll().ToList());
         }
 
         [CacheAspect()]
