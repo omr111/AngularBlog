@@ -25,6 +25,10 @@ const routes: Routes = [
         path: "hakkimizda",
         component: AboutUsComponent,
       },
+      {
+        path:"sayfa/:pageNumber",
+        component:HomePageComponent
+      }
     
     ],
   },

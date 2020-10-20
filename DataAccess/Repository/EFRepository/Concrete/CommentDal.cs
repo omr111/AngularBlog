@@ -4,10 +4,11 @@ using System.Text;
 using Core.dataAccess;
 using DataAccess.entities;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+
 namespace DataAccess.Repository.EFRepository.Concrete
 {
-    public class CommentDal : RepositoryBase<Comment, AngularBlogContext>, ICommentDal
+    public class CommentDal : RepositoryBase<Comments, AngularBlogContext>, ICommentDal
     {
     }
 }

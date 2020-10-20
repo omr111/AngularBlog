@@ -7,6 +7,8 @@ using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Logging;
 using Core.Aspects.Autofac.Performance;
 using Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using Entities.conc;
+using Entities.Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,7 +27,12 @@ namespace WebApi.Controllers
         [HttpGet]
         public ActionResult getAll()
         {
-            var result=  _category.getAll();
+            var result=  _category.getAll().Select(x=>new CategoryDto
+            {
+                id=x.Id,
+                parentId=x.ParentId,
+                categoryName=x.CategoryName,
+            }).ToList();
             return Ok(result);
         }
     }

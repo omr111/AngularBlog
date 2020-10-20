@@ -2,14 +2,15 @@
 using Core.dataAccess;
 using DataAccess.entities;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataAccess.Repository.EFRepository.Concrete
 {
-    public class CategoryDal : RepositoryBase<Category, AngularBlogContext>, ICategoryDal
+    public class CategoryDal : RepositoryBase<Categories, AngularBlogContext>, ICategoryDal
     {
     }
 }

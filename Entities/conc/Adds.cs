@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities.Concrete
+namespace Entities.conc
 {
-    public class Add
+    public partial class Adds
     {
         public int Id { get; set; }
         public string AddName { get; set; }

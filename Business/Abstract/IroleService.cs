@@ -1,5 +1,6 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,14 +9,14 @@ namespace Business.Abstract
 {
     public interface IroleService
     {
-        IDataResult<List<role>> getAll();
-        IDataResult<List<role>> getAllByUserId(int userId);
-        IDataResult<role> getOneById(int id);
-        IDataResult<role> getOneByName(string roleName);
-        IResult addRole(role role);
-        IResult updateRole(role role);
+        IDataResult<List<Roles>> getAll();
+        IDataResult<List<Roles>> getAllByUserId(int userId);
+        IDataResult<Roles> getOneById(int id);
+        IDataResult<Roles> getOneByName(string roleName);
+        IResult addRole(Roles role);
+        IResult updateRole(Roles role);
         IResult deleteRoleById(int id);
-        IResult deleteRoleByEntity(role role);
+        IResult deleteRoleByEntity(Roles role);
         IResult addRoleToUser(int roleId, int userId);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Business.Abstract;
 using Core.DataResult.Abstract;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;

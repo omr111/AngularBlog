@@ -1,5 +1,6 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,14 +9,14 @@ namespace Business.Abstract
 {
     public interface IAddService
     {
-        IDataResult<List<Add>> getAll();
-        IDataResult<List<Add>> getAllByAddId(int AddId);
+        IDataResult<List<Adds>> getAll();
+        IDataResult<List<Adds>> getAllByAddId(int AddId);
        
-        IDataResult<Add> getOneById(int id);
-        IResult addAdd(Add Add);
-        IResult updateAdd(Add Add);
+        IDataResult<Adds> getOneById(int id);
+        IResult addAdd(Adds Add);
+        IResult updateAdd(Adds Add);
         IResult deleteAddById(int id);
-        IResult deleteAddByEntity(Add Add);
+        IResult deleteAddByEntity(Adds Add);
 
     }
 }

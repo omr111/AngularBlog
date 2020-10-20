@@ -1,5 +1,5 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +9,14 @@ namespace Business.Abstract
 {
     public interface IUserMessageService
     {
-        IDataResult<IQueryable<UserMessage>> getAll();
-        IDataResult<List<UserMessage>> getAllByPostId(int postId);
+        IDataResult<IQueryable<UserMessages>> getAll();
+        IDataResult<List<UserMessages>> getAllByPostId(int postId);
        
-        IDataResult<UserMessage> getOneById(int id);
-        IResult addUserMessage(UserMessage UserMessage);
-        IResult updateUserMessage(UserMessage UserMessage);
+        IDataResult<UserMessages> getOneById(int id);
+        IResult addUserMessage(UserMessages UserMessage);
+        IResult updateUserMessage(UserMessages UserMessage);
         IResult deleteUserMessageById(int id);
-        IResult deleteUserMessageByEntity(UserMessage UserMessage);
+        IResult deleteUserMessageByEntity(UserMessages UserMessage);
 
     }
 }

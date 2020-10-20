@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using Core.dataAccess;
-using Entities.Concrete;
+using Entities.conc;
+
 namespace DataAccess.Repository.EFRepository.Abstract
 {
-    public interface IUserContactInfoDal : IRepositoryBase<UserContactInfo>
+    public interface IUserContactInfoDal : IRepositoryBase<UserContactInfoes>
     {
     }
 }

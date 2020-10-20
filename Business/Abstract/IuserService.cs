@@ -1,5 +1,5 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,16 +8,16 @@ namespace Business.Abstract
 {
     public interface IuserService
     {
-        IDataResult<List<user>> getAll();
+        IDataResult<List<Users>> getAll();
       
-        IDataResult<user> getOneById(int id);
-        IDataResult<user> getOneByUserNameAndPassword(string username,string password);
-        IDataResult<user> getOneByEmailAndPassword(string email, string password);
-        IDataResult<user> getOneByUserName(string username);
-        IDataResult<user> getOneByEmail(string email);
-        IResult addUser(user user);
-        IResult updateUser(user user);
+        IDataResult<Users> getOneById(int id);
+        IDataResult<Users> getOneByUserNameAndPassword(string username,string password);
+        IDataResult<Users> getOneByEmailAndPassword(string email, string password);
+        IDataResult<Users> getOneByUserName(string username);
+        IDataResult<Users> getOneByEmail(string email);
+        IResult addUser(Users user);
+        IResult updateUser(Users user);
         IResult deleteUserById(int id);
-        IResult deleteUserByEntity(user user);
+        IResult deleteUserByEntity(Users user);
     }
 }

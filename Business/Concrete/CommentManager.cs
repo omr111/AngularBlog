@@ -1,7 +1,7 @@
 ﻿using Business.Abstract;
 using Core.DataResult.Abstract;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,7 +15,7 @@ namespace Business.Concrete
         {
             _CommentDal = CommentDal;
         }
-        public IResult addOrder(Comment Comment)
+        public IResult addOrder(Comments Comment)
         {
             throw new NotImplementedException();
         }
@@ -25,27 +25,27 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IResult deleteOrderByEntity(Comment Comment)
+        public IResult deleteOrderByEntity(Comments Comment)
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<Comment>> getAll()
+        public IDataResult<List<Comments>> getAll()
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<Comment>> getAllCommentOfTheUserByUserId(int UserId)
+        public IDataResult<List<Comments>> getAllCommentOfTheUserByUserId(int UserId)
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<Comment> getOneById(int id)
+        public IDataResult<Comments> getOneById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IResult updateOrder(Comment Comment)
+        public IResult updateOrder(Comments Comment)
         {
             throw new NotImplementedException();
         }

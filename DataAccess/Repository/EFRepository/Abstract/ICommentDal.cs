@@ -1,12 +1,12 @@
 ﻿using Core.dataAccess;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataAccess.Repository.EFRepository.Abstract
 {
-    public interface ICommentDal : IRepositoryBase<Comment>
+    public interface ICommentDal : IRepositoryBase<Comments>
     {
     }
 }

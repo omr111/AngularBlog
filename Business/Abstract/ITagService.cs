@@ -1,5 +1,5 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,14 +8,14 @@ namespace Business.Abstract
 {
     public interface ITagService
     {
-        IDataResult<List<Tag>> getAll();
-        IDataResult<List<Tag>> getAllByPostId(int PostId);
+        List<Tags> getAll();
+        List<Tags> getAllByPostId(int PostId);
        
-        IDataResult<Tag> getOneById(int id);
-        IResult addTag(Tag Tag);
-        IResult updateTag(Tag Tag);
+        IDataResult<Tags> getOneById(int id);
+        IResult addTag(Tags Tag);
+        IResult updateTag(Tags Tag);
         IResult deleteTagById(int id);
-        IResult deleteTagByEntity(Tag Tag);
+        IResult deleteTagByEntity(Tags Tag);
 
     }
 }

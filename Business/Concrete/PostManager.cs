@@ -1,13 +1,14 @@
 ﻿using Business.Abstract;
 using Business.BusinessAspect;
 using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Exception;
 using Core.Aspects.Autofac.Logging;
 using Core.Aspects.Autofac.Performance;
 using Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using Core.DataResult.Abstract;
 using Core.DataResult.Concrete;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -26,12 +27,12 @@ namespace Business.Concrete
         }
         
         [CacheRemoveAspect("IPostService.get")]//Post service içindeki methodlardan get ile başlayan methodların cache'lerini sil demek"
-        public IResult addPost(Post Post)
+        public IResult addPost(Posts Post)
         {
             throw new NotImplementedException();
         }
         [CacheRemoveAspect("IPostService.get")]
-        public IResult deletePostByEntity(Post Post)
+        public IResult deletePostByEntity(Posts Post)
         {
             throw new NotImplementedException();
         }
@@ -41,26 +42,29 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
        // [SecuredOperation("Customer")]  //rol yönetimi   
-        [CacheAspect()]
-        [PerformanceAspect(5)] //Post getirilme işlemi 5 saniyeden fazla sürerse debug'a yazacak
-        [LogAspect(typeof(DatabaseLogger))] //dosyaya loglama yapar
-        public List<Post> getAll()
+        //[CacheAspect()]
+       // [PerformanceAspect(5)] //Post getirilme işlemi 5 saniyeden fazla sürerse debug'a yazacak
+       // [LogAspect(typeof(DatabaseLogger))] //dosyaya loglama yapar
+       // [ExceptionLogAspect(typeof(DatabaseLogger))]
+        public IQueryable<Posts> getAll()
         {
-            return (_Post.getAll().ToList());
+            return _Post.getAll();
         }
 
         [CacheAspect()]
-        public IQueryable<Post> getAllByCategoryId(int catId)
+        public IQueryable<Posts> getAllByCategoryId(int catId)
         {
             throw new NotImplementedException();
         }
         [LogAspect(typeof(DatabaseLogger))]
-        public IDataResult<Post> getOneById(int id)
+        public IDataResult<Posts> getOneById(int id)
         {
-            return new DataSuccessResult<Post>(_Post.getOne(x => x.Id == id));
+            var post = _Post.getOne(x => x.Id == id);
+         
+            return new DataSuccessResult<Posts>(post);
         }
         [CacheRemoveAspect("IPostService.get")]
-        public IResult updatePost(Post Post)
+        public IResult updatePost(Posts Post)
         {
             throw new NotImplementedException();
         }

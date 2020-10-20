@@ -1,20 +1,22 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Abstract
 {
    public interface ICategoryService
     {
-        List<Category> getAll();
-        IDataResult<List<Category>> getAllByCategoryId(int catId);
+        IQueryable<Categories> getAll();
+        IDataResult<List<Categories>> getAllByCategoryId(int catId);
     
-        IDataResult<Category> getOneById(int id);
-        IResult addCategory(Category category);
-        IResult updateCategory(Category category);
+        IDataResult<Categories> getOneById(int id);
+        IResult addCategory(Categories category);
+        IResult updateCategory(Categories category);
         IResult deleteCategoryById(int id);
-        IResult deleteCategoryByEntity(Category category);
+        IResult deleteCategoryByEntity(Categories category);
     }
 }

@@ -3,7 +3,7 @@ using Business.Constants.BllMethodMessages;
 using Core.DataResult.Abstract;
 using Core.DataResult.Concrete;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,13 +20,13 @@ namespace Business.Concrete
         {
             _user = user;
         }
-        public IResult addUser(user user)
+        public IResult addUser(Users user)
         {
             _user.add(user);
             return new SuccessResult(bllMessages.userAdded,true);
         }
 
-        public IResult deleteUserByEntity(user user)
+        public IResult deleteUserByEntity(Users user)
         {
             _user.delete(user);
             return new SuccessResult(bllMessages.userDeleted, true);
@@ -38,61 +38,61 @@ namespace Business.Concrete
             return new SuccessResult(bllMessages.userDeleted, true);
         }
 
-        public IDataResult<List<user>> getAll()
+        public IDataResult<List<Users>> getAll()
         {
-            List<user> users = _user.getAll().ToList();
-            return new DataSuccessResult<List<user>>(users, bllMessages.usersListed);
+            List<Users> users = _user.getAll().ToList();
+            return new DataSuccessResult<List<Users>>(users, bllMessages.usersListed);
         }
 
       
 
-        public IDataResult<user> getOneByEmailAndPassword(string email, string password)
+        public IDataResult<Users> getOneByEmailAndPassword(string email, string password)
         {
             //hash ve salt kontrol edilerek girilen pass eşit mi diye kontrol edilip çağrılacak.
             // return new DataSuccessResult<user>(_user.getOne(x=>x.userEmail&x.p);, bllMessages.userListed);
             throw new NotImplementedException();
         }
 
-        public IDataResult<user> getOneById(int id)
+        public IDataResult<Users> getOneById(int id)
         {
-            user user = _user.getOne(x => x.Id == id);
+            Users user = _user.getOne(x => x.Id == id);
 
             if (user != null)
             {
-                return new DataSuccessResult<user>(user);
+                return new DataSuccessResult<Users>(user);
             }
             else
-                return new DataErrorResult<user>(user);
+                return new DataErrorResult<Users>(user);
       
         }
-        public IDataResult<user> getOneByEmail(string email)
+        public IDataResult<Users> getOneByEmail(string email)
         {
-            user user = _user.getOne(x => x.Email == email);
+            Users user = _user.getOne(x => x.Email == email);
       
             if (user != null)
             {
-                return new DataSuccessResult<user>(user);
+                return new DataSuccessResult<Users>(user);
             }
             else
-                return new DataErrorResult<user>(user);
+                return new DataErrorResult<Users>(user);
         }
-        public IDataResult<user> getOneByUserName(string username)
+        public IDataResult<Users> getOneByUserName(string username)
         {
-            user user = _user.getOne(x => x.userName == username);
+            Users user = _user.getOne(x => x.UserName == username);
             if (user != null)
             {
-                return new DataSuccessResult<user>(user);
+                return new DataSuccessResult<Users>(user);
             }
             else
-                return new DataErrorResult<user>(user);
+                return new DataErrorResult<Users>(user);
         }
 
-        public IDataResult<user> getOneByUserNameAndPassword(string username, string password)
+        public IDataResult<Users> getOneByUserNameAndPassword(string username, string password)
         {//hash ve salt kontrol edilerek girilen pass eşit mi diye kontrol edilip çağrılacak.
             throw new NotImplementedException();
         }
 
-        public IResult updateUser(user user)
+        public IResult updateUser(Users user)
         {
             _user.update(user);
             return new SuccessResult(bllMessages.userUpdated, true);

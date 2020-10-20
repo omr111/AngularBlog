@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities.Concrete
+namespace Entities.conc
 {
-    public  class UserMessage
+    public partial class UserMessages
     {
         public int Id { get; set; }
         public int SenderUserId { get; set; }

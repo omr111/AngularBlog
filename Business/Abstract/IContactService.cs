@@ -1,5 +1,5 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,13 +8,13 @@ namespace Business.Abstract
 {
    public interface IContactService
     {
-        IDataResult<List<Contact>> getAll();
-        IDataResult<List<Contact>> getAllByAddId(int contactId);
+        IDataResult<List<Contacts>> getAll();
+        IDataResult<List<Contacts>> getAllByAddId(int contactId);
 
-        IDataResult<Contact> getOneById(int id);
-        IResult addContact(Contact Contact);
-        IResult updateContact(Contact Contact);
+        IDataResult<Contacts> getOneById(int id);
+        IResult addContact(Contacts Contact);
+        IResult updateContact(Contacts Contact);
         IResult deleteContactById(int id);
-        IResult deleteAddByEntity(Add Add);
+        IResult deleteAddByEntity(Contacts Add);
     }
 }

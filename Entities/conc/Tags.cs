@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities.Concrete
+namespace Entities.conc
 {
-    public  class Tag
+    public partial class Tags
     {
-        public Tag()
+        public Tags()
         {
             PostTag = new HashSet<PostTag>();
         }

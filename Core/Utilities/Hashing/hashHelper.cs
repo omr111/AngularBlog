@@ -1,4 +1,4 @@
-﻿using Entities.Concrete;
+﻿using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +18,7 @@ namespace Core.Utilities.Hashing
             }
             
         }
-        public static bool verifyPasswordHash(string password, user user)
+        public static bool verifyPasswordHash(string password, Users user)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512(user.PasswordSalt))
             {

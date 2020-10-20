@@ -1,7 +1,7 @@
 ﻿using Business.Abstract;
 using Core.DataResult.Abstract;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,12 +15,12 @@ namespace Business.Concrete
         {
             _UserContactInfoDal = UserContactInfoDal;
         }
-        public IResult addUserContactInfo(UserContactInfo UserContactInfo)
+        public IResult addUserContactInfo(UserContactInfoes UserContactInfo)
         {
             throw new NotImplementedException();
         }
 
-        public IResult deleteUserContactInfoByEntity(UserContactInfo UserContactInfo)
+        public IResult deleteUserContactInfoByEntity(UserContactInfoes UserContactInfo)
         {
             throw new NotImplementedException();
         }
@@ -30,22 +30,22 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<UserContactInfo>> getAll()
+        public IDataResult<List<UserContactInfoes>> getAll()
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<UserContactInfo>> getAllByUserId(int userId)
+        public IDataResult<List<UserContactInfoes>> getAllByUserId(int userId)
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<UserContactInfo> getOneById(int id)
+        public IDataResult<UserContactInfoes> getOneById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IResult updateUserContactInfo(UserContactInfo UserContactInfo)
+        public IResult updateUserContactInfo(UserContactInfoes UserContactInfo)
         {
             throw new NotImplementedException();
         }

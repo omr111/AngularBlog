@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities.Concrete
+namespace Entities.conc
 {
-    public  class Comment
+    public partial class Comments
     {
         public int Id { get; set; }
         public int PostId { get; set; }
@@ -11,7 +11,7 @@ namespace Entities.Concrete
         public string CommentText { get; set; }
         public DateTime AddedDate { get; set; }
 
-        public virtual Post Post { get; set; }
-        public virtual user User { get; set; }
+        public virtual Posts Post { get; set; }
+        public virtual Users User { get; set; }
     }
 }

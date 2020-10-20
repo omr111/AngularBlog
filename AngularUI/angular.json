@@ -23,13 +23,16 @@
             "styles": [
               "src/styles.css",
               "./src/app/Layouts/mainLayout/mainCss/CommonCss/ionicons.css",
-
+         "./src/app/Layouts/mainLayout/mainCss/CommonCss/layerslider.css",
               "./src/app/Layouts/mainLayout/mainCss/HomePageCss/styles.css",
               "./src/app/Layouts/mainLayout/mainCss/HomePageCss/responsive.css",
 
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"
             ],
-            "scripts": ["./node_modules/jquery/dist/jquery.min.js"]
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./src/app/Layouts/mainLayout/mainJs/layerslider.js"
+            ]
           },
           "configurations": {
             "production": {

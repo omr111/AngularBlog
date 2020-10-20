@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities.Concrete
+namespace Entities.conc
 {
-    public  class Category
+    public partial class Categories
     {
-        public Category()
+        public Categories()
         {
-            Posts = new HashSet<Post>();
+            Posts = new HashSet<Posts>();
         }
 
         public int Id { get; set; }
         public int ParentId { get; set; }
         public string CategoryName { get; set; }
 
-        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<Posts> Posts { get; set; }
     }
 }

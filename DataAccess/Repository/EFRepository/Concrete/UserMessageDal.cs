@@ -4,10 +4,11 @@ using System.Text;
 using Core.dataAccess;
 using DataAccess.entities;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+
 namespace DataAccess.Repository.EFRepository.Concrete
 {
-    public class UserMessageDal : RepositoryBase<UserMessage, AngularBlogContext>, IUserMessageDal
+    public class UserMessageDal : RepositoryBase<UserMessages, AngularBlogContext>, IUserMessageDal
     {
     }
 }

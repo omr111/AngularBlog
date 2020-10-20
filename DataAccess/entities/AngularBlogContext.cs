@@ -1,38 +1,48 @@
-﻿using Entities.Concrete;
+﻿using System;
+using Entities.conc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace DataAccess.entities
 {
-    public  class AngularBlogContext : DbContext
+    public partial class AngularBlogContext : DbContext
     {
-        
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AngularBlogContext()
         {
-            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=AngularBlog;Integrated Security=True;MultipleActiveResultSets=True;");
         }
 
-        public DbSet<Add> Adds { get; set; }
-        public  DbSet<Category> categories { get; set; }
-        public  DbSet<Comment> Comments { get; set; }
-        public  DbSet<Contact> Contacts { get; set; }
-        public DbSet<Log> logs { get; set; }
-        public  DbSet<Like> Likes { get; set; }
-        public  DbSet<PostTag> PostTag { get; set; }
-        public  DbSet<Post> Posts { get; set; }
-        public  DbSet<userRole> userRoles { get; set; }
-        public  DbSet<role> roles { get; set; }
-        public  DbSet<Tag> Tags { get; set; }
-        public  DbSet<UserContactInfo> UserContactInfoes { get; set; }
-        public  DbSet<UserMessage> UserMessages { get; set; }
-        public  DbSet<user> users { get; set; }
+        public AngularBlogContext(DbContextOptions<AngularBlogContext> options)
+            : base(options)
+        {
+        }
 
-      
+        public virtual DbSet<Adds> Adds { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Comments> Comments { get; set; }
+        public virtual DbSet<Contacts> Contacts { get; set; }
+        public virtual DbSet<Likes> Likes { get; set; }
+        public virtual DbSet<Logs> Logs { get; set; }
+        public virtual DbSet<PostTag> PostTag { get; set; }
+        public virtual DbSet<Posts> Posts { get; set; }
+        public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<Tags> Tags { get; set; }
+        public virtual DbSet<UserContactInfoes> UserContactInfoes { get; set; }
+        public virtual DbSet<UserMessages> UserMessages { get; set; }
+        public virtual DbSet<UserRoles> UserRoles { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+
+                optionsBuilder.UseSqlServer("Server=.;Database=AngularBlog;Trusted_Connection=True;");
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Add>(entity =>
+            modelBuilder.Entity<Adds>(entity =>
             {
                 entity.Property(e => e.Id).HasColumnName("id");
 
@@ -41,8 +51,10 @@ namespace DataAccess.entities
                     .HasMaxLength(110);
             });
 
-            modelBuilder.Entity<Category>(entity =>
+            modelBuilder.Entity<Categories>(entity =>
             {
+                entity.ToTable("categories");
+
                 entity.Property(e => e.CategoryName)
                     .HasColumnName("categoryName")
                     .HasMaxLength(50);
@@ -50,8 +62,10 @@ namespace DataAccess.entities
                 entity.Property(e => e.ParentId).HasColumnName("ParentID");
             });
 
-            modelBuilder.Entity<Comment>(entity =>
+            modelBuilder.Entity<Comments>(entity =>
             {
+                entity.HasIndex(e => e.PostId);
+
                 entity.HasIndex(e => e.UserId)
                     .HasName("IX_UserId");
 
@@ -74,7 +88,7 @@ namespace DataAccess.entities
                     .HasConstraintName("FK_dbo.Comments_dbo.Users_UserId");
             });
 
-            modelBuilder.Entity<Contact>(entity =>
+            modelBuilder.Entity<Contacts>(entity =>
             {
                 entity.Property(e => e.DateOfSending).HasColumnType("datetime");
 
@@ -87,8 +101,7 @@ namespace DataAccess.entities
                 entity.Property(e => e.Title).IsRequired();
             });
 
-
-            modelBuilder.Entity<Like>(entity =>
+            modelBuilder.Entity<Likes>(entity =>
             {
                 entity.HasIndex(e => e.PostId)
                     .HasName("IX_PostId");
@@ -109,6 +122,19 @@ namespace DataAccess.entities
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_dbo.Likes_dbo.Users_UserId");
+            });
+
+            modelBuilder.Entity<Logs>(entity =>
+            {
+                entity.ToTable("logs");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Audit).HasMaxLength(50);
+
+                entity.Property(e => e.LogDate).HasColumnName("logDate");
+
+                entity.Property(e => e.LogDetail).HasColumnName("logDetail");
             });
 
             modelBuilder.Entity<PostTag>(entity =>
@@ -137,7 +163,7 @@ namespace DataAccess.entities
                     .HasConstraintName("FK_dbo.PostTag_dbo.Tags_Tag_Id");
             });
 
-            modelBuilder.Entity<Post>(entity =>
+            modelBuilder.Entity<Posts>(entity =>
             {
                 entity.HasIndex(e => e.CategoryId)
                     .HasName("IX_CategoryId");
@@ -171,47 +197,23 @@ namespace DataAccess.entities
                     .HasConstraintName("FK_dbo.Posts_dbo.Users_UserId");
             });
 
-            modelBuilder.Entity<userRole>(entity =>
+            modelBuilder.Entity<Roles>(entity =>
             {
-                entity.HasKey(e => new { e.RoleId, e.UserId })
-                    .HasName("PK_dbo.RoleUsers");
+                entity.ToTable("roles");
 
-                entity.HasIndex(e => e.RoleId)
-                    .HasName("IX_Role_Id");
-
-                entity.HasIndex(e => e.UserId)
-                    .HasName("IX_User_Id");
-
-                entity.Property(e => e.RoleId).HasColumnName("Role_Id");
-
-                entity.Property(e => e.UserId).HasColumnName("User_Id");
-
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.RoleUsers)
-                    .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK_dbo.RoleUsers_dbo.Roles_Role_Id");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.RoleUsers)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK_dbo.RoleUsers_dbo.Users_User_Id");
-            });
-
-            modelBuilder.Entity<role>(entity =>
-            {
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<Tag>(entity =>
+            modelBuilder.Entity<Tags>(entity =>
             {
                 entity.Property(e => e.TagName)
                     .HasColumnName("tagName")
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<UserContactInfo>(entity =>
+            modelBuilder.Entity<UserContactInfoes>(entity =>
             {
                 entity.HasIndex(e => e.UserId)
                     .HasName("IX_UserId");
@@ -229,7 +231,7 @@ namespace DataAccess.entities
                     .HasConstraintName("FK_dbo.UserContactInfoes_dbo.Users_UserId");
             });
 
-            modelBuilder.Entity<UserMessage>(entity =>
+            modelBuilder.Entity<UserMessages>(entity =>
             {
                 entity.Property(e => e.DateOfSending).HasColumnType("datetime");
 
@@ -238,8 +240,38 @@ namespace DataAccess.entities
                     .HasMaxLength(500);
             });
 
-            modelBuilder.Entity<user>(entity =>
+            modelBuilder.Entity<UserRoles>(entity =>
             {
+                entity.HasKey(e => new { e.RoleId, e.UserId })
+                    .HasName("PK_dbo.RoleUsers");
+
+                entity.ToTable("userRoles");
+
+                entity.HasIndex(e => e.RoleId)
+                    .HasName("IX_Role_Id");
+
+                entity.HasIndex(e => e.UserId)
+                    .HasName("IX_User_Id");
+
+                entity.Property(e => e.RoleId).HasColumnName("Role_Id");
+
+                entity.Property(e => e.UserId).HasColumnName("User_Id");
+
+                entity.HasOne(d => d.Role)
+                    .WithMany(p => p.UserRoles)
+                    .HasForeignKey(d => d.RoleId)
+                    .HasConstraintName("FK_dbo.RoleUsers_dbo.Roles_Role_Id");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.UserRoles)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK_dbo.RoleUsers_dbo.Users_User_Id");
+            });
+
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.ToTable("users");
+
                 entity.Property(e => e.Birthday).HasColumnType("datetime");
 
                 entity.Property(e => e.Email)
@@ -265,11 +297,13 @@ namespace DataAccess.entities
                 entity.Property(e => e.Surname)
                     .IsRequired()
                     .HasMaxLength(100);
+
+                entity.Property(e => e.UserName).HasColumnName("userName");
             });
 
-            
+            OnModelCreatingPartial(modelBuilder);
         }
 
-       
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

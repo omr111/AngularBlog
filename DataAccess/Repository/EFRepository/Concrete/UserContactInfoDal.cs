@@ -4,10 +4,11 @@ using System.Text;
 using Core.dataAccess;
 using DataAccess.entities;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+
 namespace DataAccess.Repository.EFRepository.Concrete
 {
-    public class UserContactInfoDal : RepositoryBase<UserContactInfo, AngularBlogContext>, IUserContactInfoDal
+    public class UserContactInfoDal : RepositoryBase<UserContactInfoes, AngularBlogContext>, IUserContactInfoDal
     {
     }
 }

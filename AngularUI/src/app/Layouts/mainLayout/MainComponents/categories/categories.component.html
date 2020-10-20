@@ -1,4 +1,4 @@
-<div *ngIf="categories.length == 0" class="d-flex justify-content-center">
+<div *ngIf="!categories" class="d-flex justify-content-center">
   <div class="spinner-border text-warning" role="status">
     <span class="sr-only">Yükleniyor...</span>
   </div>
@@ -6,9 +6,12 @@
 
 <div class="sidebar-section category-area">
   <h4 class="title"><b class="light-color">Kategoriler</b></h4>
-
-  <a *ngFor="let item of categories" class="category" href="#">
-    <h6 class="name">{{ item.categoryName }}</h6>
-  </a>
+  <p *ngFor="let item of categories">
+    <a  href="#">{{item.categoryName}}</a>
+  </p>
+  
+   
+   
+  
 </div>
 <!-- sidebar-section category-area -->

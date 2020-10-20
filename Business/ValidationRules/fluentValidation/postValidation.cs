@@ -1,4 +1,4 @@
-﻿using Entities.Concrete;
+﻿using Entities.conc;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Business.ValidationRules.fluentValidation
 {
-   public class postValidation:AbstractValidator<Post>
+   public class postValidation:AbstractValidator<Posts>
     {
         public postValidation()
         {

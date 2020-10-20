@@ -1,9 +1,11 @@
 ﻿using Business.Abstract;
 using Core.DataResult.Abstract;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -15,12 +17,23 @@ namespace Business.Concrete
         {
             _TagDal = TagDal;
         }
-        public IResult addTag(Tag Tag)
+        public List<Tags> getAll()
         {
             throw new NotImplementedException();
         }
 
-        public IResult deleteTagByEntity(Tag Tag)
+        public List<Tags> getAllByPostId(int PostId)
+        {
+            List<Tags> tags= _TagDal.getAll(x => x.PostTag.Any(y => y.PostId == PostId)).ToList();
+            return tags;
+        }
+
+        public IResult addTag(Tags Tag)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IResult deleteTagByEntity(Tags Tag)
         {
             throw new NotImplementedException();
         }
@@ -30,22 +43,13 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<Tag>> getAll()
+      
+        public IDataResult<Tags> getOneById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<Tag>> getAllByPostId(int PostId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<Tag> getOneById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IResult updateTag(Tag Tag)
+        public IResult updateTag(Tags Tag)
         {
             throw new NotImplementedException();
         }

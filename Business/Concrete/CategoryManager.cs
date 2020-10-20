@@ -7,7 +7,7 @@ using Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using Core.DataResult.Abstract;
 using Core.DataResult.Concrete;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +22,16 @@ namespace Business.Concrete
         {
             _categoryDal = categoryDal;
         }
-
-        public IResult addCategory(Category category)
+        public IQueryable<Categories> getAll()
+        {
+            return _categoryDal.getAll();
+        }
+        public IResult addCategory(Categories category)
         {
             throw new NotImplementedException();
         }
 
-        public IResult deleteCategoryByEntity(Category category)
+        public IResult deleteCategoryByEntity(Categories category)
         {
             throw new NotImplementedException();
         }
@@ -41,22 +44,19 @@ namespace Business.Concrete
         [CacheAspect()]
         [PerformanceAspect(5)] //Post getirilme işlemi 5 saniyeden fazla sürerse debug'a yazacak
         [LogAspect(typeof(DatabaseLogger))] //dosyaya loglama yapar    
-       public List<Category> getAll()
-        {
-            return _categoryDal.getAll().ToList();
-        }
+     
 
-        public IDataResult<List<Category>> getAllByCategoryId(int catId)
+        public IDataResult<List<Categories>> getAllByCategoryId(int catId)
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<Category> getOneById(int id)
+        public IDataResult<Categories> getOneById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IResult updateCategory(Category category)
+        public IResult updateCategory(Categories category)
         {
             throw new NotImplementedException();
         }

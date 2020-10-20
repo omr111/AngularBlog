@@ -1,5 +1,6 @@
 ﻿using Core.Extensions;
-using Entities.Concrete;
+using Entities.conc;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -22,7 +23,7 @@ namespace Core.Utilities.Security.Jwt
             _tokenOption = _configuration.GetSection("TokenOptions").Get<tokenOptions>();
         }
 
-        public AccessToken CreateToken(user user, List<role> userRoles)
+        public AccessToken CreateToken(Users user, List<Roles> userRoles)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_tokenOption.securityKey));
             var singingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
@@ -36,8 +37,8 @@ namespace Core.Utilities.Security.Jwt
             };
 
         }
-        public JwtSecurityToken CreateJwtSecurityToken(tokenOptions tokenOptions, user user,
-            SigningCredentials SigningCredentials, List<role> userRoles)
+        public JwtSecurityToken CreateJwtSecurityToken(tokenOptions tokenOptions, Users user,
+            SigningCredentials SigningCredentials, List<Roles> userRoles)
         {
             var jwt = new JwtSecurityToken(
                 issuer: tokenOptions.Issuer,
@@ -50,7 +51,7 @@ namespace Core.Utilities.Security.Jwt
             return jwt;
         }
 
-        public IEnumerable<Claim> setClaimsForUser(user user, List<role> userRoles)
+        public IEnumerable<Claim> setClaimsForUser(Users user, List<Roles> userRoles)
         {
             var claims = new List<Claim>();
             claims.addIdentifierId(user.Id);

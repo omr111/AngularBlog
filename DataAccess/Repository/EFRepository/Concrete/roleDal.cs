@@ -4,16 +4,17 @@ using System.Text;
 using Core.dataAccess;
 using DataAccess.entities;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
+
 namespace DataAccess.Repository.EFRepository.Concrete
 {
-    public class  roleDal : RepositoryBase<role, AngularBlogContext>, IroleDal
+    public class  roleDal : RepositoryBase<Roles, AngularBlogContext>, IroleDal
     {
         public void addRoleToUser( int roleId,int userId)
         {
             using (var ctx=new AngularBlogContext())
             {
-                ctx.userRoles.Add(new userRole { RoleId = roleId, UserId = userId });
+                ctx.UserRoles.Add(new Entities.conc.UserRoles { RoleId = roleId, UserId = userId });
                 ctx.SaveChanges();
             }
         }

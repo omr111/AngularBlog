@@ -2,7 +2,7 @@
 using Core.DataResult.Abstract;
 using Core.DataResult.Concrete;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace Business.Concrete
             _user = user;
         }
 
-        public IResult addRole(role role)
+        public IResult addRole(Roles role)
         {
             throw new NotImplementedException();
         }
@@ -38,7 +38,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult();
             }
-            var isExistRoleToUser = _role.getOne(x => x.RoleUsers.Any(y => y.RoleId == roleId && y.UserId == userId));
+            var isExistRoleToUser = _role.getOne(x => x.UserRoles.Any(y => y.RoleId == roleId && y.UserId == userId));
             if (isExistRoleToUser != null)
             {
                 return new ErrorResult();
@@ -47,7 +47,7 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IResult deleteRoleByEntity(role role)
+        public IResult deleteRoleByEntity(Roles role)
         {
             throw new NotImplementedException();
         }
@@ -57,28 +57,28 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<role>> getAll()
+        public IDataResult<List<Roles>> getAll()
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<List<role>> getAllByUserId(int userId)
+        public IDataResult<List<Roles>> getAllByUserId(int userId)
         {
-            var result = _role.getAll(x => x.RoleUsers.Any(y => y.UserId == userId)).ToList();
-            return new DataSuccessResult<List<role>>(result);
+            var result = _role.getAll(x => x.UserRoles.Any(y => y.UserId == userId)).ToList();
+            return new DataSuccessResult<List<Roles>>(result);
         }
 
-        public IDataResult<role> getOneById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataResult<role> getOneByName(string roleName)
+        public IDataResult<Roles> getOneById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IResult updateRole(role role)
+        public IDataResult<Roles> getOneByName(string roleName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IResult updateRole(Roles role)
         {
             throw new NotImplementedException();
         }

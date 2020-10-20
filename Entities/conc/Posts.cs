@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities.Concrete
+namespace Entities.conc
 {
-    public  class Post
+    public partial class Posts
     {
-        public Post()
+        public Posts()
         {
-            Comments = new HashSet<Comment>();
-            Likes = new HashSet<Like>();
+            Comments = new HashSet<Comments>();
+            Likes = new HashSet<Likes>();
             PostTag = new HashSet<PostTag>();
         }
 
@@ -23,10 +23,10 @@ namespace Entities.Concrete
         public string Description { get; set; }
         public string Title { get; set; }
 
-        public virtual Category Category { get; set; }
-        public virtual user User { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<Like> Likes { get; set; }
+        public virtual Categories Category { get; set; }
+        public virtual Users User { get; set; }
+        public virtual ICollection<Comments> Comments { get; set; }
+        public virtual ICollection<Likes> Likes { get; set; }
         public virtual ICollection<PostTag> PostTag { get; set; }
     }
 }

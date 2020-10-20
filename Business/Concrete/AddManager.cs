@@ -1,7 +1,7 @@
 ﻿using Business.Abstract;
 using Core.DataResult.Abstract;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,37 +15,38 @@ namespace Business.Concrete
         {
             _addDal = addDal;
         }
-        IResult IAddService.addAdd(Add Add)
+
+        public IResult addAdd(Adds Add)
         {
             throw new NotImplementedException();
         }
 
-        IResult IAddService.deleteAddByEntity(Add Add)
+        public IResult deleteAddByEntity(Adds Add)
         {
             throw new NotImplementedException();
         }
 
-        IResult IAddService.deleteAddById(int id)
+        public IResult deleteAddById(int id)
         {
             throw new NotImplementedException();
         }
 
-        IDataResult<List<Add>> IAddService.getAll()
+        public IDataResult<List<Adds>> getAll()
         {
             throw new NotImplementedException();
         }
 
-        IDataResult<List<Add>> IAddService.getAllByAddId(int AddId)
+        public IDataResult<List<Adds>> getAllByAddId(int AddId)
         {
             throw new NotImplementedException();
         }
 
-        IDataResult<Add> IAddService.getOneById(int id)
+        public IDataResult<Adds> getOneById(int id)
         {
             throw new NotImplementedException();
         }
 
-        IResult IAddService.updateAdd(Add discouAddntCoupon)
+        public IResult updateAdd(Adds Add)
         {
             throw new NotImplementedException();
         }

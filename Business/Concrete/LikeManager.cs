@@ -1,7 +1,7 @@
 ﻿using Business.Abstract;
 using Core.DataResult.Abstract;
 using DataAccess.Repository.EFRepository.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +16,12 @@ namespace Business.Concrete
         {
             _LikeDal = LikeDal;
         }
-        public IResult addLike(Like Like)
+        public IResult addLike(Likes Like)
         {
             throw new NotImplementedException();
         }
 
-        public IResult deleteLikeByEntity(Like Like)
+        public IResult deleteLikeByEntity(Likes Like)
         {
             throw new NotImplementedException();
         }
@@ -31,17 +31,17 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IDataResult<IQueryable<Like>> getAll()
+        public List<Likes> getAll()
         {
             throw new NotImplementedException();
         }
 
-        public IDataResult<Like> getOneById(int id)
+        public IDataResult<Likes> getOneById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IResult updateLike(Like Like)
+        public IResult updateLike(Likes Like)
         {
             throw new NotImplementedException();
         }

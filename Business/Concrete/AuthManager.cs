@@ -7,7 +7,7 @@ using Core.DataResult.Concrete;
 using Core.Utilities.Business;
 using Core.Utilities.Hashing;
 using Core.Utilities.Security.Jwt;
-using Entities.Concrete;
+using Entities.conc;
 using Entities.Dtos;
 using System;
 using System.Collections;
@@ -28,24 +28,24 @@ namespace Business.Concrete
             _token = token;
             _role = role;
         }
-        public IDataResult<AccessToken> createAccessToken(user user)
+        public IDataResult<AccessToken> createAccessToken(Users user)
         {
-            List<role> role = _role.getAllByUserId(user.Id).data;
+            List<Roles> role = _role.getAllByUserId(user.Id).data;
             var Token = _token.CreateToken(user, role);
             return new DataSuccessResult<AccessToken>(Token);
         }
 
 
-        public IDataResult<user> login(loginDto login)
+        public IDataResult<Users> login(loginDto login)
         {
             var user = _user.getOneByEmail(login.userEmail);
             if (!user.success)
-                return new DataErrorResult<user>(bllMessages.notFoundEmail);
+                return new DataErrorResult<Users>(bllMessages.notFoundEmail);
             if (!hashHelper.verifyPasswordHash(login.password, user.data))
             {
-                return new DataErrorResult<user>(bllMessages.wrongPassword);
+                return new DataErrorResult<Users>(bllMessages.wrongPassword);
             }
-            return new DataSuccessResult<user>(user.data, bllMessages.successfullLogin);
+            return new DataSuccessResult<Users>(user.data, bllMessages.successfullLogin);
         }
         //   [TransactionAspect]
         [ValidationAspect(typeof(postValidation))]
@@ -53,7 +53,7 @@ namespace Business.Concrete
         {
             byte[] passwordHash;
             byte[] passwordSalt;
-            user user = new user();
+            Users user = new Users();
             hashHelper.createPasswordHash(register.password, out passwordHash, out passwordSalt);
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;

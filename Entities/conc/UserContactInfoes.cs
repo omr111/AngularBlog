@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Entities.Concrete
+namespace Entities.conc
 {
-    public  class UserContactInfo
+    public partial class UserContactInfoes
     {
         public int Id { get; set; }
         public string ContactType { get; set; }
@@ -11,6 +11,6 @@ namespace Entities.Concrete
         public string ContactIcon { get; set; }
         public int UserId { get; set; }
 
-        public virtual user User { get; set; }
+        public virtual Users User { get; set; }
     }
 }

@@ -1,13 +1,18 @@
+<style>
+    .myActiveClass{
+        color:#FFAD4D;
+    }
+</style>
 <div class="bottom-area">
 
     <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
     <ul class="main-menu visible-on-click" id="main-menu">
         <li >
-            <a routerLink="/" >Anasayfa</a>         
+            <a routerLink="/" [ngClass]="{'myActiveClass': isActive==1}">Anasayfa</a>         
         </li>
-        <li><a routerLink="/iletisim">İletişim</a></li>
-        <li><a routerLink="/hakkimizda">Hakkımızda</a></li>
+        <li><a routerLink="/iletisim" [ngClass]="{'myActiveClass': isActive==3}">İletişim</a></li>
+        <li><a routerLink="/hakkimizda" [ngClass]="{'myActiveClass': isActive==2}">Hakkımızda</a></li>
         <li><a href="#">CATEGORIES</a></li>
         <li><a href="#">CONTACT</a></li>
     </ul><!-- main-menu -->

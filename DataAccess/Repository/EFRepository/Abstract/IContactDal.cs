@@ -1,12 +1,13 @@
 ﻿using Core.dataAccess;
-using Entities.Concrete;
+using Entities.conc;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataAccess.Repository.EFRepository.Abstract
 {
-   public interface IContactDal:IRepositoryBase<Contact>
+   public interface IContactDal:IRepositoryBase<Contacts>
     {
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -11,12 +11,12 @@ namespace Business.Abstract
 {
     public interface   IPostService
     {
-        List<Post> getAll();
-        IQueryable<Post> getAllByCategoryId(int catId);
-        IDataResult<Post> getOneById(int id);
-        IResult addPost(Post Post);
-        IResult updatePost(Post Post);
+        IQueryable<Posts> getAll();
+        IQueryable<Posts> getAllByCategoryId(int catId);
+        IDataResult<Posts> getOneById(int id);
+        IResult addPost(Posts Post);
+        IResult updatePost(Posts Post);
         IResult deletePostById(int id);
-        IResult deletePostByEntity(Post Post);
+        IResult deletePostByEntity(Posts Post);
     }
 }

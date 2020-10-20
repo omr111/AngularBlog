@@ -1,5 +1,5 @@
 ﻿using Core.DataResult.Abstract;
-using Entities.Concrete;
+using Entities.conc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +9,13 @@ namespace Business.Abstract
 {
     public interface ILikeService
     {
-        IDataResult<IQueryable<Like>> getAll();
+        List<Likes> getAll();
        
       
-        IDataResult<Like> getOneById(int id);
-        IResult addLike(Like Like);
-        IResult updateLike(Like Like);
+        IDataResult<Likes> getOneById(int id);
+        IResult addLike(Likes Like);
+        IResult updateLike(Likes Like);
         IResult deleteLikeById(int id);
-        IResult deleteLikeByEntity(Like Like);
+        IResult deleteLikeByEntity(Likes Like);
     }
 }
