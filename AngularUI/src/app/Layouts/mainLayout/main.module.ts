@@ -18,7 +18,7 @@ import { PostDetailAuthorInfoComponent } from "./MainComponents/post-detail-auth
 import { BlogAdsComponent } from "./MainComponents/blog-ads/blog-ads.component";
 import { FooterComponent } from "./MainComponents/footer/footer.component";
 import { MainLayoutComponent } from "./main-layout/main-layout.component";
-
+import {NgxPaginationModule} from "ngx-pagination";
 
 import { LogoPanelComponent } from "./MainComponents/logo-panel/logo-panel.component";
 import { NavigationComponent } from "./MainComponents/navigation/navigation.component";
@@ -58,7 +58,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
 })
 export class MainModule {}

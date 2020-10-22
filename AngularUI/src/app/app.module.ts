@@ -26,6 +26,7 @@ import {MainModule} from './Layouts/mainLayout/main.module';
     HttpClientModule
   
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -3,13 +3,13 @@ import { Category } from "./category";
 export class Post {
   Id: number;
   BackgroundImgUrl: string;
-  ReleaseDate: Date;
-  ReadCount: number;
+  releaseDate: Date;
+  readCount: number;
   IsActive: boolean;
   CommentsCount: number;
-  Text: string;
+  text: string;
   Description: string;
-  Title: string;
-  LikeCount: number;
-  Category: Category;
+  title: string;
+  likeCount: number;
+  category: Category;
 }

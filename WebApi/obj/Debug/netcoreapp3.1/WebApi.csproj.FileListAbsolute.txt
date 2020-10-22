@@ -232,8 +232,6 @@ C:\Users\LENOVO\Desktop\myblog\abcCoreProject\WebApi\obj\Debug\netcoreapp3.1\Web
 D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.csprojAssemblyReference.cache
 D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfoInputs.cache
 D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfo.cs
-D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
-D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.dll
 D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.pdb
 D:\Github\AngularBlog\WebApi\bin\Debug\netcoreapp3.1\log4net.config
@@ -310,3 +308,8 @@ D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CopyComplete
 D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\staticwebassets\WebApi.StaticWebAssets.Manifest.cache
 D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\staticwebassets\WebApi.StaticWebAssets.xml
 D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.genruntimeconfig.cache
+D:\Github\AngularBlog\WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Github\AngularBlog\WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Github\AngularBlog\WebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
+D:\Github\AngularBlog\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache

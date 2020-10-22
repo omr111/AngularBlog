@@ -29,11 +29,9 @@ namespace WebApi.Controllers
         {
 
 
-            var result = _Post.getAll().Include(a => a.Category)
-                .Skip(pageCount * (pageNumber - 1)).Take(pageCount).OrderByDescending(x => x.ReleaseDate);
-
-
-            result.Select(z =>
+            var result = _Post.getAll();
+            int totalCount = result.Count();
+             var posts= result .Skip(pageCount * (pageNumber - 1)).Take(pageCount).OrderByDescending(x => x.ReleaseDate).Select(z =>
                 new postDto
                 {
 
@@ -55,11 +53,14 @@ namespace WebApi.Controllers
                         parentId = z.Category.ParentId
                     },
 
-                }).ToList();
+                }).ToList(); 
+
+
+       
             var model = new
             {
-                postList = result,
-                totalPostCount = result.Count()
+                posts = posts,
+                totalPostCount = totalCount
             };
 
             return Ok(model);

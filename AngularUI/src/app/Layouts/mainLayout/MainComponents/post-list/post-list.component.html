@@ -1,53 +1,65 @@
 <div class="blog-posts">
+  <div
+    class="single-post"
+    *ngFor="
+      let post of posts
+        | paginate:
+           {
+            itemsPerPage: pageCount,
+            currentPage: pageNumber,
+            totalItems: totalPostCount
+            }
+    "
+  >
+    <div class="image-wrapper">
+      <img [src]="post.BackgroundImgUrl" alt="Blog Image" />
+    </div>
 
-    <div class="single-post">
-        <div class="image-wrapper"><img src="images/blog-1-1000x600.jpg" alt="Blog Image"></div>
+    <div class="icons">
+      <div class="left-area">
+        <a class="btn caegory-btn" href="#"
+          ><b>{{ post.category.categoryName }}</b></a
+        >
+      </div>
+      <ul class="right-area social-icons">
+        <li>
+          <a href="#"><i class="ion-android-share-alt"></i>Share</a>
+        </li>
+        <li>
+          <a href="#"
+            ><i class="ion-android-favorite-outline"></i>{{ post.likeCount }}</a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><i class="ion-android-textsms"></i>{{ post.readCount }}</a
+          >
+        </li>
+      </ul>
+    </div>
+    <p class="date">
+      <em>{{ post.releaseDate | date: "dd.MM.yyyy" }}</em>
+    </p>
+    <h3 class="title">
+      <a href="#">
+        <b class="light-color"> {{ post.title }}</b>
+      </a>
+    </h3>
+    <p>
+      {{ post.text }}
+    </p>
+    <a class="btn read-more-btn" href="#"><b>Devamı...</b></a>
+  </div>
+  <!-- single-post -->
 
-        <div class="icons">
-            <div class="left-area">
-                <a class="btn caegory-btn" href="#"><b>TRAVEL</b></a>
-            </div>
-            <ul class="right-area social-icons">
-                <li><a href="#"><i class="ion-android-share-alt"></i>Share</a></li>
-                <li><a href="#"><i class="ion-android-favorite-outline"></i>03</a></li>
-                <li><a href="#"><i class="ion-android-textsms"></i>06</a></li>
-            </ul>
-        </div>
-        <p class="date"><em>Monday, October 13, 2017</em></p>
-        <h3 class="title"><a href="#"><b class="light-color">This is post about travel, adventure and fun</b></a></h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-             laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-             architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-             consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-            dolore magnam aliquam quaerat voluptatem.</p>
-        <a class="btn read-more-btn" href="#"><b>READ MORE</b></a>
-    </div><!-- single-post -->
-
-    <div class="single-post">
-        <div class="image-wrapper"><img src="images/blog-2-1000x600.jpg" alt="Blog Image"></div>
-
-        <div class="icons">
-            <div class="left-area">
-                <a class="btn caegory-btn" href="#"><b>TRAVEL</b></a>
-            </div>
-            <ul class="right-area social-icons">
-                <li><a href="#"><i class="ion-android-share-alt"></i>Share</a></li>
-                <li><a href="#"><i class="ion-android-favorite-outline"></i>03</a></li>
-                <li><a href="#"><i class="ion-android-textsms"></i>06</a></li>
-            </ul>
-        </div>
-        <h6 class="date"><em>Monday, October 13, 2017</em></h6>
-        <h3 class="title"><a href="#"><b class="light-color">This is post for the ones that love to travel</b></a></h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-             laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-             architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-             consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-            dolore magnam aliquam quaerat voluptatem.</p>
-        <a class="btn read-more-btn" href="#"><b>READ MORE</b></a>
-    </div><!-- single-post -->
-
-   
-
-    <a class="btn load-more-btn" target="_blank" href="#">LOAD OLDER POSTS</a>
-
-</div><!-- blog-posts -->
+  <a *ngIf="totalPostCount > 0" class="btn load-more-btn" href="#"
+    >Daha Fazla Yükle</a
+  >
+  <pagination-controls
+    responsive="true"
+    (pageChange)="pageChanged($event)"
+    previousLabel="Geri"
+    nextLabel="İleri"
+  ></pagination-controls>
+</div>
+<!-- blog-posts -->
