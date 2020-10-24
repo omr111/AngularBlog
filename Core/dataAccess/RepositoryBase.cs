@@ -9,11 +9,13 @@ namespace Core.dataAccess
 {
     public class RepositoryBase<T, TContext> : IRepositoryBase<T> where T : class,new() where TContext : DbContext,new()
     {
+        
         public IQueryable<T> getAll(Expression<Func<T, bool>> filter = null)
         {
             var ctx = new TContext();
 
-             if (filter != null)
+
+            if (filter != null)
                     return ctx.Set<T>().Where(filter);
                 else
                     return ctx.Set<T>();
@@ -40,12 +42,12 @@ namespace Core.dataAccess
 
        
 
-        public T getOne(Expression<Func<T, bool>> filter)
+        public IQueryable<T> getOne(Expression<Func<T, bool>> filter)
         {
-            using (var ctx = new TContext())
-            {
-                return ctx.Set<T>().FirstOrDefault(filter);
-            }
+
+            var ctx = new TContext();
+                return ctx.Set<T>();
+           
            
         }
 

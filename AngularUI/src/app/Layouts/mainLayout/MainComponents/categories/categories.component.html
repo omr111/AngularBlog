@@ -7,7 +7,7 @@
 <div class="sidebar-section category-area">
   <h4 class="title"><b class="light-color">Kategoriler</b></h4>
   <p *ngFor="let item of categories">
-    <a  href="#">{{item.categoryName}}</a>
+    <a [routerLink]="['/kategori',item.categoryName | urlFormat,item.id]">{{item.categoryName}}</a>
   </p>
   
    

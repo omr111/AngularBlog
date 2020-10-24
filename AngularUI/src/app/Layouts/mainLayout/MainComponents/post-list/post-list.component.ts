@@ -18,22 +18,23 @@ export class PostListComponent implements OnInit {
   posts: Post[];
   totalPostCount: number;
   pageCount: number = 2;
-  
+  ajax:any;
 
   ngOnInit() {
     this.activeRoute.paramMap.subscribe(params => {
+
+      if(this.ajax!=null) this.ajax.unsubscribe();
       if (params.get("pageNumber")) {
         this.pageNumber = Number(params.get("pageNumber"));
       }
+     
       this.posts = [];
       this.totalPostCount = 0;
-      this.postService.getPostList(this.pageCount, this.pageNumber).subscribe(data => {
+    this.ajax= this.postService.getPostList(this.pageCount, this.pageNumber).subscribe(data => {
         
         this.posts = data.posts;
           this.totalPostCount = data.totalPostCount;
-        console.log("total items: "+this.totalPostCount)
-        console.log("pageCount: "+this.pageCount)  
-           console.log("pageNumber: "+this.pageNumber)
+     
         });
     });
   }
@@ -41,6 +42,6 @@ export class PostListComponent implements OnInit {
   pageChanged(event:number){
     this.pageNumber=event;
     this.router.navigateByUrl(`/sayfa/${this.pageNumber}`);
-    console.log("pageNumber2: "+this.pageNumber)
+   
   }
 }

@@ -28,6 +28,8 @@ import { InstagramSharedSliderComponent } from "./MainComponents/instagram-share
 import { NavigationGroupComponent } from "./MainComponents/navigation-group/navigation-group.component";
 import { PostTagsComponent } from "./MainComponents/post-tags/post-tags.component";
 import { HttpClientModule } from '@angular/common/http';
+import { UrlFormatPipe } from 'src/app/Pipes/url-format.pipe';
+import { ListpostBycategoryComponent } from './MainViews/listpost-bycategory/listpost-bycategory.component';
 
 @NgModule({
   declarations: [
@@ -49,8 +51,9 @@ import { HttpClientModule } from '@angular/common/http';
     TopSearchMenuComponent,
     SliderComponent,
     InstagramSharedSliderComponent,
-    NavigationGroupComponent
-    
+    NavigationGroupComponent,
+    UrlFormatPipe,
+    ListpostBycategoryComponent,
     
   ],
   imports: [
@@ -61,5 +64,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     NgxPaginationModule
   ],
+  exports:[
+    UrlFormatPipe
+  ]
 })
 export class MainModule {}

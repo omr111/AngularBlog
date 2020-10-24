@@ -8,5 +8,6 @@ namespace Entities.Dtos
     {
         public List<tagDto> tags { get; set; }
         public AuthorForPostDto author { get; set; }
+        public List<CommentDto> comments { get; set; }
     }
 }

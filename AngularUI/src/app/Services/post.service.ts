@@ -2,6 +2,9 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { PostPg } from "../Models/post-pg";
 import { tap } from "rxjs/Operators";
+
+import { SinglePost } from '../Models/single-post';
+
 @Injectable({
   providedIn: "root",
 })
@@ -17,5 +20,17 @@ export class PostService {
               this.loading = false;
                  })
           );
+  }
+  getSinglePost(id:number){
+    let newUrl=`${this.url}/${id}`;
+    return this.httpClient.get<SinglePost>(newUrl).pipe(tap(x=>{
+      this.loading=false;
+    }));  
+  }
+  getPostListByCategoryId(id:number ,itemCount:number,page:number){
+    let newUrl=`${this.url}/${id}/${itemCount}/${page}`;
+    return this.httpClient.get<PostPg>(newUrl).pipe(tap(x=>{
+      this.loading=false;
+    }))
   }
 }

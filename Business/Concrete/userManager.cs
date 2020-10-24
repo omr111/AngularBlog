@@ -55,36 +55,36 @@ namespace Business.Concrete
 
         public IDataResult<Users> getOneById(int id)
         {
-            Users user = _user.getOne(x => x.Id == id);
+            var user = _user.getOne(x => x.Id == id);
 
             if (user != null)
             {
-                return new DataSuccessResult<Users>(user);
+                return new DataSuccessResult<Users>(user.First());
             }
             else
-                return new DataErrorResult<Users>(user);
+                return new DataErrorResult<Users>(user.First());
       
         }
         public IDataResult<Users> getOneByEmail(string email)
         {
-            Users user = _user.getOne(x => x.Email == email);
+            var user = _user.getOne(x => x.Email == email);
       
             if (user != null)
             {
-                return new DataSuccessResult<Users>(user);
+                return new DataSuccessResult<Users>(user.FirstOrDefault());
             }
             else
-                return new DataErrorResult<Users>(user);
+                return new DataErrorResult<Users>(user.FirstOrDefault());
         }
         public IDataResult<Users> getOneByUserName(string username)
         {
-            Users user = _user.getOne(x => x.UserName == username);
+            var user = _user.getOne(x => x.UserName == username);
             if (user != null)
             {
-                return new DataSuccessResult<Users>(user);
+                return new DataSuccessResult<Users>(user.FirstOrDefault());
             }
             else
-                return new DataErrorResult<Users>(user);
+                return new DataErrorResult<Users>(user.FirstOrDefault());
         }
 
         public IDataResult<Users> getOneByUserNameAndPassword(string username, string password)

@@ -1,1 +1,98 @@
-<p>single-post works!</p>
+<div class="single-post">
+            <div class="image-wrapper"><img src="images/blog-1-1000x600.jpg" alt="Blog Image"></div>
+
+            <div class="icons">
+                <div class="left-area">
+                    <a class="btn caegory-btn" href="#"><b>{{singlePost.category.categoryName}}</b></a>
+                </div>
+                <ul class="right-area social-icons">
+                    <li><a href="#"><i class="ion-android-share-alt"></i>Share</a></li>
+                    <li><a href="#"><i class="ion-android-favorite-outline"></i>{{singlePost.likeCount}}</a></li>
+                    <li><a href="#"><i class="ion-android-textsms"></i>{{singlePost.commentCount}}</a></li>
+                </ul>
+            </div>
+            <p class="date"><em>{{singlePost.releaseDate | date: "dd.MM.yyyy"}}</em></p>
+            <h3 class="title"><a href="javascript:void(0)"><b class="light-color">{{singlePost.title}}</b></a></h3>
+            <p class="desc">{{singlePost.text}}
+
+            <ul>
+                <li ><a class="btn mr-1" href="#">design</a></li>
+                <li><a class="btn mr-1" href="#">fashion</a></li>
+            </ul>
+
+        </div><!-- single-post -->
+
+
+        <div class="post-author">
+            <div class="author-image"><img src="images/author-1-200x200.jpg" alt="Autohr Image"></div>
+
+            <div class="author-info">
+                <h4 class="name"><b class="light-color">{{singlePost.author.name}} {{singlePost.author.surname}} </b></h4>
+
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                dolore magnam aliquam quaerat voluptatem.</p>
+
+                <ul class="social-icons">
+                    <li><a href="#"><i class="ion-social-facebook-outline"></i></a></li>
+                    <li><a href="#"><i class="ion-social-twitter-outline"></i></a></li>
+                    <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                    <li><a href="#"><i class="ion-social-vimeo-outline"></i></a></li>
+                    <li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
+                </ul><!-- right-area -->
+
+            </div><!-- author-info -->
+        </div><!-- post-author -->
+
+        <div class="comments-area">
+            <h4 class="title"><b class="light-color">{{singlePost.commentCount}} Comments</b></h4>
+            <div class="comment">
+                <div class="author-image"><img src="images/author-2-150x150.jpg" alt="Autohr Image"></div>
+                <div class="comment-info">
+                    <h5><b class="light-color">William Smith</b></h5>
+                    <h6 class="date"><em>Monday, October 30, 2017</em></h6>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        dolore magnam aliquam quaerat voluptatem.</p>
+                </div>
+            </div><!-- comment -->
+
+            <div class="comment">
+                <div class="author-image"><img src="images/author-3-150x150.jpg" alt="Autohr Image"></div>
+                <div class="comment-info">
+                    <h5><b class="light-color">William Smith</b></h5>
+                    <h6 class="date"><em>Monday, October 30, 2017</em></h6>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        dolore magnam aliquam quaerat voluptatem.</p>
+                </div>
+            </div><!-- comment -->
+
+        </div><!-- comments-area -->
+
+        <div class="leave-comment-area">
+            <h4 class="title"><b class="light-color">Leave a comment</b></h4>
+            <div class="leave-comment">
+
+                <form method="post">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input class="name-input" type="text" placeholder="Name">
+                        </div>
+                        <div class="col-sm-6">
+                            <input class="email-input" type="text" placeholder="Email">
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="subject-input" type="text" placeholder="Subject">
+                        </div>
+                        <div class="col-sm-12">
+                            <textarea class="message-input" rows="6" placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-sm-12">
+                            <button class="btn btn-2"><b>COMMENT</b></button>
+                        </div>
+
+                    </div><!-- row -->
+                </form>
+
+            </div><!-- leave-comment -->
+
+        </div><!-- comments-area -->
+

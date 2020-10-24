@@ -1,6 +1,6 @@
-<div class="blog-posts">
-  <div
-    class="single-post"
+
+  <div class="single-post mb-5"
+    
     *ngFor="
       let post of posts
         | paginate:
@@ -12,7 +12,7 @@
     "
   >
     <div class="image-wrapper">
-      <img [src]="post.BackgroundImgUrl" alt="Blog Image" />
+      <img [src]="post.backgroundImgUrl" alt="Blog Image" />
     </div>
 
     <div class="icons">
@@ -26,13 +26,19 @@
           <a href="#"><i class="ion-android-share-alt"></i>Share</a>
         </li>
         <li>
-          <a href="#"
+          <a href="#" title="Beğeni Sayısı"
             ><i class="ion-android-favorite-outline"></i>{{ post.likeCount }}</a
           >
         </li>
         <li>
-          <a href="#"
-            ><i class="ion-android-textsms"></i>{{ post.readCount }}</a
+          <a href="#" title="Yorum Sayısı"
+            ><i class="ion-android-textsms"></i>{{ post.commentCount }}</a
+          >
+        </li>
+        <li>
+          <a href="#" title="Görüntülenme Sayısı"
+          
+            ><i class="fa fa-eye" ></i>{{ post.readCount }} </a
           >
         </li>
       </ul>
@@ -48,18 +54,17 @@
     <p>
       {{ post.text }}
     </p>
-    <a class="btn read-more-btn" href="#"><b>Devamı...</b></a>
+    <a class="btn read-more-btn" [routerLink]="['/makale',post.title | urlFormat ,post.id]"><b>Devamı...</b></a>
+    
+ 
   </div>
   <!-- single-post -->
 
-  <a *ngIf="totalPostCount > 0" class="btn load-more-btn" href="#"
-    >Daha Fazla Yükle</a
-  >
+
   <pagination-controls
-    responsive="true"
-    (pageChange)="pageChanged($event)"
-    previousLabel="Geri"
-    nextLabel="İleri"
-  ></pagination-controls>
-</div>
-<!-- blog-posts -->
+  responsive="true"
+  (pageChange)="pageChanged($event)"
+  previousLabel="Geri"
+  nextLabel="İleri "
+></pagination-controls>
+

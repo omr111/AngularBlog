@@ -1,5 +1,6 @@
 ﻿using Core.DataResult.Abstract;
 using Entities.conc;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -13,7 +14,7 @@ namespace Business.Abstract
     {
         IQueryable<Posts> getAll();
         IQueryable<Posts> getAllByCategoryId(int catId);
-        IDataResult<Posts> getOneById(int id);
+        IDataResult<PostDetailDto> getOneById(int id);
         IResult addPost(Posts Post);
         IResult updatePost(Posts Post);
         IResult deletePostById(int id);

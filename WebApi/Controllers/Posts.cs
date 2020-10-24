@@ -27,36 +27,22 @@ namespace WebApi.Controllers
         [HttpGet("{pageCount}/{pageNumber}")]
         public ActionResult getAll(int pageCount = 10, int pageNumber = 1)
         {
-
-
             var result = _Post.getAll();
             int totalCount = result.Count();
-             var posts= result .Skip(pageCount * (pageNumber - 1)).Take(pageCount).OrderByDescending(x => x.ReleaseDate).Select(z =>
-                new postDto
-                {
+            var posts = PostPagingMethod(result, pageCount, pageNumber);
+            var model = new
+            {   posts = posts,
+                totalPostCount = totalCount
+            };
 
-                    id = z.Id,
-                    BackgroundImgUrl = z.BackgroundImgUrl,
-                    commentCount = z.Comments.Count,
-                    Description = z.Description,
-                    IsActive = z.IsActive,
-                    likeCount = z.Likes.Count,
-                    ReadCount = z.ReadCount,
-                    ReleaseDate = z.ReleaseDate,
-                    Text = z.Text,
-                    Title = z.Title,
-
-                    category = new CategoryDto
-                    {
-                        categoryName = z.Category.CategoryName,
-                        id = z.CategoryId,
-                        parentId = z.Category.ParentId
-                    },
-
-                }).ToList(); 
-
-
-       
+            return Ok(model);
+        }
+        [HttpGet("{categoryId}/{pageCount}/{pageNumber}")]
+        public ActionResult getAll(int categoryId, int pageCount = 10, int pageNumber = 1)
+        {
+            var result = _Post.getAllByCategoryId(categoryId);
+            int totalCount = result.Count();
+            var posts = PostPagingMethod(result, pageCount, pageNumber);
             var model = new
             {
                 posts = posts,
@@ -70,43 +56,38 @@ namespace WebApi.Controllers
 
         public ActionResult getone(int id)
         {
-            //var result = _Post.getOneById(id).data.Include(a => a.Category).Include(b => b.User).Include(c => c.Likes)
-            //   .Include(d => d.Comments).Include(e => e.PostTag).ThenInclude(f => f.Tag)
-            //   ;
+            var result = _Post.getOneById(id);
 
-            //result.Select(z =>
-            //    new PostDetailDto
-            //    {
-            //        tags = z.PostTag.Where(y => y.PostId == z.Id).Select(c => new tagDto
-            //        {
-            //            Id = c.TagId,
-            //            TagName = c.Tag.TagName
 
-            //        }).ToList(),
-            //        id = z.Id,
-            //        BackgroundImgUrl = z.BackgroundImgUrl,
-            //        commentCount = z.Comments.Count,
-            //        Description = z.Description,
-            //        IsActive = z.IsActive,
-            //        likeCount = z.Likes.Count,
-            //        ReadCount = z.ReadCount,
-            //        ReleaseDate = z.ReleaseDate,
-            //        Text = z.Text,
-            //        Title = z.Title,
-            //        category = new CategoryDto
-            //        {
-            //            categoryName = z.Category.CategoryName,
-            //            id = z.CategoryId,
-            //            parentId = z.Category.ParentId
-            //        },
-            //        author = new AuthorForPostDto()
-            //        {
-            //            id = z.UserId.Value,
-            //            Name = z.User.Name,
-            //            Surname = z.User.Surname
-            //        }
-            //    }).ToList();
-            return Ok(_Post.getOneById(id));
+            return Ok(result.data);
+        }
+        private List<postDto> PostPagingMethod(IQueryable<Entities.conc.Posts> postList, int itemCount, int page)
+        {
+
+            var posts = postList.Skip(itemCount * (page - 1)).Take(itemCount).OrderByDescending(x => x.ReleaseDate).Select(z =>
+               new postDto
+               {
+
+                   id = z.Id,
+                   BackgroundImgUrl = z.BackgroundImgUrl,
+                   commentCount = z.Comments.Count,
+                   Description = z.Description,
+                   IsActive = z.IsActive,
+                   likeCount = z.Likes.Count,
+                   ReadCount = z.ReadCount,
+                   ReleaseDate = z.ReleaseDate,
+                   Text = z.Text,
+                   Title = z.Title,
+
+                   category = new CategoryDto
+                   {
+                       categoryName = z.Category.CategoryName,
+                       id = z.CategoryId,
+                       parentId = z.Category.ParentId
+                   },
+
+               }).ToList();
+            return posts;
         }
     }
 }

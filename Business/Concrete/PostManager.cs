@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.BusinessAspect;
+using Business.Constants.BllMethodMessages;
 using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Exception;
 using Core.Aspects.Autofac.Logging;
@@ -9,6 +10,7 @@ using Core.DataResult.Abstract;
 using Core.DataResult.Concrete;
 using DataAccess.Repository.EFRepository.Abstract;
 using Entities.conc;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -54,14 +56,64 @@ namespace Business.Concrete
         [CacheAspect()]
         public IQueryable<Posts> getAllByCategoryId(int catId)
         {
-            throw new NotImplementedException();
+            return _Post.getAll(x => x.CategoryId == catId);
         }
         [LogAspect(typeof(DatabaseLogger))]
-        public IDataResult<Posts> getOneById(int id)
+        public IDataResult<PostDetailDto> getOneById(int id)
         {
-            var post = _Post.getOne(x => x.Id == id);
-         
-            return new DataSuccessResult<Posts>(post);
+            var result = _Post.getOne(x => x.Id == id);
+          
+            var post = result.Select(z =>
+                    new PostDetailDto
+                    {
+                        tags = z.PostTag.Where(y => y.PostId == z.Id).Select(tag => new tagDto
+                        {
+                            Id = tag.TagId,
+                            TagName = tag.Tag.TagName
+
+                        }).ToList(),
+                        id = z.Id,
+                        BackgroundImgUrl = z.BackgroundImgUrl,
+                        commentCount = z.Comments.Count,
+                        Description = z.Description,
+                        IsActive = z.IsActive,
+                        likeCount = z.Likes.Count,
+                        ReadCount = z.ReadCount,
+                        ReleaseDate = z.ReleaseDate,
+                        Text = z.Text,
+                        Title = z.Title,
+                        category = new CategoryDto
+                        {
+                            categoryName = z.Category.CategoryName,
+                            id = z.CategoryId,
+                            parentId = z.Category.ParentId
+                        },
+                        author = new AuthorForPostDto()
+                        {
+                            id = z.UserId.Value,
+                            Name = z.User.Name,
+                            Surname = z.User.Surname
+                        },
+                        comments = z.Comments.Where(y => y.PostId == z.Id).Select(com => new CommentDto
+                        {
+                            Id = com.Id,
+                            CommentText = com.CommentText,
+                            AddedDate = com.AddedDate,
+                            User = new userDto_forComment
+                            {
+                                Id = z.UserId.Value,
+                                Email = z.User.Email,
+                                IsActive = z.User.IsActive,
+                                Name = z.User.Name,
+                                ProfileImgUrl = z.User.ProfileImgUrl,
+                                Surname = z.User.Surname,
+                                UserName = z.User.UserName
+
+                            }
+
+                        }).ToList()
+                    }).FirstOrDefault(x=>x.id==id);
+            return new DataSuccessResult<PostDetailDto>(post);
         }
         [CacheRemoveAspect("IPostService.get")]
         public IResult updatePost(Posts Post)

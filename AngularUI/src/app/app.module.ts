@@ -9,9 +9,14 @@ import{AdminModuleModule} from './Layouts/adminLayout/admin-module.module';
 import {MainModule} from './Layouts/mainLayout/main.module';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
+
+
+    
     
     
     
