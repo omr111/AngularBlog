@@ -5,6 +5,7 @@
 /* Slider */
 
 	.ls-container {
+	
 		visibility: hidden;
 		position: relative;
 		max-width: 100%;

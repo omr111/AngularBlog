@@ -22,6 +22,8 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.css",
+             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+            
               "./node_modules/font-awesome/css/font-awesome.min.css",
               "./src/app/Layouts/mainLayout/mainCss/CommonCss/ionicons.css",
          "./src/app/Layouts/mainLayout/mainCss/CommonCss/layerslider.css",

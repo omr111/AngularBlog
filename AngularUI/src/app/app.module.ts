@@ -16,11 +16,6 @@ import {MainModule} from './Layouts/mainLayout/main.module';
     AppComponent,
 
 
-    
-    
-    
-    
-
   ],
   imports: [
     BrowserModule,

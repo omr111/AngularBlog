@@ -7,7 +7,8 @@ import { HomePageComponent } from "./Layouts//mainLayout/MainViews/home-page/hom
 import { ContactComponent } from "./Layouts//mainLayout/MainViews/contact/contact.component";
 import { AboutUsComponent } from "./Layouts//mainLayout/MainViews/about-us/about-us.component";
 import { SinglePostComponent } from "./Layouts//mainLayout/MainViews/single-post/single-post.component";
-import { ListpostBycategoryComponent } from './MainViews/listpost-bycategory/listpost-bycategory.component';
+import { ListpostBycategoryComponent } from './Layouts/mainLayout/MainViews/listpost-bycategory/listpost-bycategory.component';
+
 const routes: Routes = [
   {
     path: "",

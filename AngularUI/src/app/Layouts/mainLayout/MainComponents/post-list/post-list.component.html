@@ -5,14 +5,14 @@
       let post of posts
         | paginate:
            {
-            itemsPerPage: pageCount,
+            itemsPerPage: perPageItemCount,
             currentPage: pageNumber,
             totalItems: totalPostCount
             }
     "
   >
-    <div class="image-wrapper">
-      <img [src]="post.backgroundImgUrl" alt="Blog Image" />
+    <div class="image-wrapper ">
+      <img src="../../../../../assets/images/blog-1-1000x600.jpg" alt="Blog Image" />
     </div>
 
     <div class="icons">

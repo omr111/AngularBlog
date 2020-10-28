@@ -1,49 +1,4 @@
 
-/*
-====================================================
-
-* 	[Master Stylesheet]
-	
-	Theme Name :  
-	Version    :  
-	Author     :  
-	Author URI :  
-
-====================================================
-
-	TOC
-	
-	1. PRIMARY STYLES
-	2. COMMONS FOR PAGE DESIGN
-	3. MENU
-		TOP MENU
-		SEARCH AREA
-		MIDDLE AREA
-		BOTTOM AREA
-		DROPDOWN MENU STYLING
-		DROPDOWN SUBMENU
-		DROPDOWN HOVER
-	4. SLIDER
-	5. SINGLE POST
-		POST STYLE TWO 
-		LOAD MORE BUTTON
-	6. SIDEBAR STYLING
-		ABOUT AUTHOR 
-		SEARCH AREA
-		NEWSLETTER AREA
-		CATEGORY AREA
-		LATEST POSTS
-		ADVERTISEMENT AREA
-		INSTAGRAM 
-		TAGS
-	7. FOOTER INSTAGRAM STYLING 
-	8. FOOTER
-
-====================================================
-
-/* ---------------------------------
-1. PRIMARY STYLES
---------------------------------- */
 
 html{ font-size: 100%; height: 100%;  overflow-x: hidden; touch-action: manipulation; }
 

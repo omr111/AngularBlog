@@ -31,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UrlFormatPipe } from 'src/app/Pipes/url-format.pipe';
 import { ListpostBycategoryComponent } from './MainViews/listpost-bycategory/listpost-bycategory.component';
 
+
+
 @NgModule({
   declarations: [
     MainLayoutComponent,

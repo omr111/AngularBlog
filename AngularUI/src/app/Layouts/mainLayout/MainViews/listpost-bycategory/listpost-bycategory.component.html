@@ -1,1 +1,9 @@
-<p>listpost-bycategory works!</p>
+<app-post-list
+  [pageNumber]="page"
+  [posts]="posts"
+  [totalPostCount]="totalPostCount"
+  [perPageItemCount]="perPageItemCount"
+  [typeOfPage]="'listPostByCategory'"
+  [categoryId]="categoryId"
+  [categoryName]="categoryName"
+></app-post-list>

@@ -4,14 +4,16 @@
   </div>
 </div>
 
+
+
+
 <div class="sidebar-section category-area">
   <h4 class="title"><b class="light-color">Kategoriler</b></h4>
-  <p *ngFor="let item of categories">
-    <a [routerLink]="['/kategori',item.categoryName | urlFormat,item.id]">{{item.categoryName}}</a>
-  </p>
-  
-   
-   
-  
+  <a  *ngFor="let item of categories" class="category" [routerLink]="['/kategori',item.categoryName | urlFormat,item.id]">
+    <img src="../../../../../assets/images/category-1-400x150.jpg" alt="Category Image">
+    <h6 class="name">{{item.categoryName}}</h6>
+  </a>
+
+ 
 </div>
 <!-- sidebar-section category-area -->

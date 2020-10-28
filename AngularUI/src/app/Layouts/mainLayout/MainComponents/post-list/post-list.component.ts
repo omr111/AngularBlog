@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Post } from "src/app/Models/post";
 import { PostService } from "src/app/Services/post.service";
@@ -10,38 +10,40 @@ import { PostService } from "src/app/Services/post.service";
 })
 export class PostListComponent implements OnInit {
   constructor(
-    private postService: PostService,
+  
     private router: Router,
-    private activeRoute: ActivatedRoute
+  
   ) {}
-  pageNumber: number = 1;
-  posts: Post[];
-  totalPostCount: number;
-  pageCount: number = 2;
-  ajax:any;
-
+  @Input() pageNumber: number;
+  @Input() posts: Post[];
+  @Input() totalPostCount: number;
+  @Input() perPageItemCount: number;
+  @Input() categoryId:number;
+  @Input() categoryName:string;
+  @Input() typeOfPage;
+  
   ngOnInit() {
-    this.activeRoute.paramMap.subscribe(params => {
-
-      if(this.ajax!=null) this.ajax.unsubscribe();
-      if (params.get("pageNumber")) {
-        this.pageNumber = Number(params.get("pageNumber"));
-      }
-     
-      this.posts = [];
-      this.totalPostCount = 0;
-    this.ajax= this.postService.getPostList(this.pageCount, this.pageNumber).subscribe(data => {
-        
-        this.posts = data.posts;
-          this.totalPostCount = data.totalPostCount;
-     
-        });
-    });
+   
   }
 
+ 
   pageChanged(event:number){
     this.pageNumber=event;
-    this.router.navigateByUrl(`/sayfa/${this.pageNumber}`);
+    switch (this.typeOfPage) {
+      case "listPostByCategory":
+        this.router.navigateByUrl(`/kategori/${this.categoryName}/${this.categoryId}/sayfa/${this.pageNumber}`);
+        break;
+        case "noneFilteredPostList":
+          this.router.navigateByUrl(`/sayfa/${this.pageNumber}`);
+          break;
+     
+      default: this.router.navigateByUrl(`/kategori/${this.categoryName}/${this.categoryId}/sayfa/${this.pageNumber}`);
+        break;
+    }
+
+    
+  
    
+    
   }
 }

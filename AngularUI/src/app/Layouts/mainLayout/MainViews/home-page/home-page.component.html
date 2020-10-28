@@ -1,1 +1,14 @@
-<app-post-list></app-post-list>
+<div *ngIf="loading" class="d-flex justify-content-center">
+  <div class="spinner-border text-warning" role="status">
+    <span class="sr-only">Yükleniyor...</span>
+  </div>
+</div>
+
+
+<app-post-list
+  [pageNumber]="pageNumber"
+  [posts]="posts"
+  [totalPostCount]="totalPostCount"
+  [perPageItemCount]="perPageItemCount"
+  [typeOfPage]="'noneFilteredPostList'"
+></app-post-list>
