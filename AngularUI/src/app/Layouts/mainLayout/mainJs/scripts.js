@@ -7,7 +7,7 @@
 	
 	// LAYER SLIDER
 
-	enableLayerSlider();
+	// enableLayerSlider();
 	
 	// SWIPER SLIDER
 	
@@ -79,27 +79,6 @@ function isElementInViewport (el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
     );
 
-}
-
-
-function enableLayerSlider(){
-	
-	if(isExists('#slider')){
-		
-		$('#slider').layerSlider({
-			sliderVersion: '6.0.0',
-			responsiveUnder: 0,
-			maxRatio: 1,
-			slideBGSize: 'auto',
-			hideUnder: 0,
-			hideOver: 100000,
-			skin: 'outline',
-			thumbnailNavigation: 'disabled',
-			
-		});
-	
-	}
-	
 }
 
 function countdownTime(){

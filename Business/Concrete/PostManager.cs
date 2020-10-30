@@ -58,6 +58,12 @@ namespace Business.Concrete
         {
             return _Post.getAll(x => x.CategoryId == catId);
         }
+
+        public IQueryable<Posts> getAllSearchedPosts(string searchText)
+        {
+            return _Post.getAll(x => x.Title.Contains(searchText));
+        }
+
         [LogAspect(typeof(DatabaseLogger))]
         public IDataResult<PostDetailDto> getOneById(int id)
         {

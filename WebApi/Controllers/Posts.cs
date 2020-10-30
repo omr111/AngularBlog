@@ -27,7 +27,7 @@ namespace WebApi.Controllers
         [HttpGet("{pageCount}/{pageNumber}")]
         public ActionResult getAll(int pageCount = 10, int pageNumber = 1)
         {
-            var result = _Post.getAll();
+            var result = _Post.getAll().OrderByDescending(x=>x.ReleaseDate);
             int totalCount = result.Count();
             var posts = PostPagingMethod(result, pageCount, pageNumber);
             var model = new
@@ -40,7 +40,7 @@ namespace WebApi.Controllers
         [HttpGet("{categoryId}/{pageCount}/{pageNumber}")]
         public ActionResult getAll(int categoryId, int pageCount = 10, int pageNumber = 1)
         {
-            var result = _Post.getAllByCategoryId(categoryId);
+            var result = _Post.getAllByCategoryId(categoryId).OrderByDescending(x=>x.ReleaseDate);
             int totalCount = result.Count();
             var posts = PostPagingMethod(result, pageCount, pageNumber);
             var model = new
@@ -52,8 +52,6 @@ namespace WebApi.Controllers
             return Ok(model);
         }
         [HttpGet("{id}")]
-
-
         public ActionResult getone(int id)
         {
             var result = _Post.getOneById(id);
@@ -88,6 +86,20 @@ namespace WebApi.Controllers
 
                }).ToList();
             return posts;
+        }
+        [HttpGet]
+        [Route("searchPosts/{searchText}/{perPageItemCount}/{pageNumber}")]
+        public ActionResult searchPosts(string searchText,int perPageItemCount=10,int pageNumber=1)
+        {
+            var foundPosts = _Post.getAllSearchedPosts(searchText).OrderByDescending(x=>x.ReleaseDate);
+            int totalCount = foundPosts.Count();
+            var posts = PostPagingMethod(foundPosts, perPageItemCount, pageNumber);
+            var model = new
+            {
+                posts = posts,
+                totalPostCount = totalCount
+            };
+            return Ok(model);
         }
     }
 }

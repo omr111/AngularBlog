@@ -13,6 +13,7 @@ namespace Business.Abstract
     public interface   IPostService
     {
         IQueryable<Posts> getAll();
+        IQueryable<Posts> getAllSearchedPosts(string searchText);
         IQueryable<Posts> getAllByCategoryId(int catId);
         IDataResult<PostDetailDto> getOneById(int id);
         IResult addPost(Posts Post);

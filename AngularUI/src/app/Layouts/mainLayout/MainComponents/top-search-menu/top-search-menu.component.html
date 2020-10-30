@@ -10,8 +10,8 @@
 
         <div class="src-area">
             <form action="post">
-                <input class="src-input" type="text" placeholder="Search">
-                <button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+                <input #searchText class="src-input" type="text" placeholder="Search">
+                <button (click)="searchPost(searchText.value)" class="src-btn" type="button"><i class="ion-ios-search-strong"></i></button>
             </form>
         </div><!-- src-area -->
 

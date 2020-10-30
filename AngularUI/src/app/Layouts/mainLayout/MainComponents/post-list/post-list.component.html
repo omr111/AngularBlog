@@ -17,7 +17,7 @@
 
     <div class="icons">
       <div class="left-area">
-        <a class="btn caegory-btn" href="#"
+        <a class="btn caegory-btn" [routerLink]="['/kategori', post.category.categoryName | urlFormat,post.category.id]"
           ><b>{{ post.category.categoryName }}</b></a
         >
       </div>
@@ -60,11 +60,13 @@
   </div>
   <!-- single-post -->
 
-
+<div *ngIf="posts?.length >0">
+  
   <pagination-controls
   responsive="true"
   (pageChange)="pageChanged($event)"
   previousLabel="Geri"
   nextLabel="İleri "
 ></pagination-controls>
+</div>
 

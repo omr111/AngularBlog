@@ -30,6 +30,7 @@ import { PostTagsComponent } from "./MainComponents/post-tags/post-tags.componen
 import { HttpClientModule } from '@angular/common/http';
 import { UrlFormatPipe } from 'src/app/Pipes/url-format.pipe';
 import { ListpostBycategoryComponent } from './MainViews/listpost-bycategory/listpost-bycategory.component';
+import { SearchPostComponent } from './MainViews/search-post/search-post.component';
 
 
 
@@ -56,6 +57,7 @@ import { ListpostBycategoryComponent } from './MainViews/listpost-bycategory/lis
     NavigationGroupComponent,
     UrlFormatPipe,
     ListpostBycategoryComponent,
+    SearchPostComponent,
     
   ],
   imports: [

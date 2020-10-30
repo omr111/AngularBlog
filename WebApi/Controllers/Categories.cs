@@ -32,8 +32,14 @@ namespace WebApi.Controllers
                 id=x.Id,
                 parentId=x.ParentId,
                 categoryName=x.CategoryName,
+                
             }).ToList();
             return Ok(result);
         }
+        //[HttpGet]
+        //public ActionResult getAllCategoriesWithGroupBy()
+        //{
+
+        //}
     }
 }

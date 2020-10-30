@@ -33,4 +33,10 @@ export class PostService {
       this.loading=false;
     }))
   }
+  getSearchPost(searchText:string,perPageItemCount:number,pageNumber:number){
+    let newUrl=`${this.url}/searchPosts/${searchText}/${perPageItemCount}/${pageNumber}`;
+    return this.httpClient.get<PostPg>(newUrl).pipe(tap(x=>{
+      this.loading=false;
+    }))
+  }
 }
