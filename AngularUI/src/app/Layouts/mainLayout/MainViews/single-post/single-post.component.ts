@@ -30,6 +30,7 @@ export class SinglePostComponent implements OnInit {
       }
       this.ajax=this.postService.getSinglePost(id).subscribe(x=>{
         this.singlePost=x;
+        this.postService.IncreaseViewCount(id).subscribe();
      
       })
 

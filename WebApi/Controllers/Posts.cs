@@ -101,5 +101,21 @@ namespace WebApi.Controllers
             };
             return Ok(model);
         }
+        [HttpGet]
+        [Route("IncreaseViewedCount/{postId}")]
+        public ActionResult IncreaseViewedCount(int postId)
+        {
+            var post = _Post.getOneByIdWithEntity(postId);
+            if (post.success)
+            {
+                post.data.ReadCount += 1;
+                var result=_Post.updatePost(post.data);
+                if (result.success)
+                {
+                    return Ok();
+                }
+            }
+            return BadRequest();
+        }
     }
 }

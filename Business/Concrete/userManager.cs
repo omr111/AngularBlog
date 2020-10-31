@@ -20,6 +20,23 @@ namespace Business.Concrete
         {
             _user = user;
         }
+        public IResult updateUser(Users user)
+        {
+            _user.update(user);
+            return new SuccessResult(bllMessages.userUpdated, true);
+        }
+        public IDataResult<Users> getOneById(int id)
+        {
+            var user = _user.getOne(x => x.Id == id);
+
+            if (user != null)
+            {
+                return new DataSuccessResult<Users>(user.First());
+            }
+            else
+                return new DataErrorResult<Users>(user.First());
+
+        }
         public IResult addUser(Users user)
         {
             _user.add(user);
@@ -53,18 +70,7 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IDataResult<Users> getOneById(int id)
-        {
-            var user = _user.getOne(x => x.Id == id);
-
-            if (user != null)
-            {
-                return new DataSuccessResult<Users>(user.First());
-            }
-            else
-                return new DataErrorResult<Users>(user.First());
-      
-        }
+       
         public IDataResult<Users> getOneByEmail(string email)
         {
             var user = _user.getOne(x => x.Email == email);
@@ -92,10 +98,6 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IResult updateUser(Users user)
-        {
-            _user.update(user);
-            return new SuccessResult(bllMessages.userUpdated, true);
-        }
+       
     }
 }

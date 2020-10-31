@@ -43,17 +43,19 @@ namespace Business.Concrete
         {
             throw new NotImplementedException();
         }
-       // [SecuredOperation("Customer")]  //rol yönetimi   
-        //[CacheAspect()]
-       // [PerformanceAspect(5)] //Post getirilme işlemi 5 saniyeden fazla sürerse debug'a yazacak
-       // [LogAspect(typeof(DatabaseLogger))] //dosyaya loglama yapar
-       // [ExceptionLogAspect(typeof(DatabaseLogger))]
+        // [SecuredOperation("Customer")]  //rol yönetimi   
+        [CacheAspect()]
+      
+        // [PerformanceAspect(5)] //Post getirilme işlemi 5 saniyeden fazla sürerse debug'a yazacak
+        // [LogAspect(typeof(DatabaseLogger))] //dosyaya loglama yapar
+        [ExceptionLogAspect(typeof(DatabaseLogger))]
         public IQueryable<Posts> getAll()
         {
             return _Post.getAll();
         }
 
         [CacheAspect()]
+       
         public IQueryable<Posts> getAllByCategoryId(int catId)
         {
             return _Post.getAll(x => x.CategoryId == catId);
@@ -65,6 +67,12 @@ namespace Business.Concrete
         }
 
         [LogAspect(typeof(DatabaseLogger))]
+        public IDataResult<Posts> getOneByIdWithEntity(int id)
+        {
+            var post = _Post.getOne(x => x.Id == id).FirstOrDefault();
+            return new DataSuccessResult<Posts>(post);
+        }
+        
         public IDataResult<PostDetailDto> getOneById(int id)
         {
             var result = _Post.getOne(x => x.Id == id);
@@ -124,7 +132,9 @@ namespace Business.Concrete
         [CacheRemoveAspect("IPostService.get")]
         public IResult updatePost(Posts Post)
         {
-            throw new NotImplementedException();
+            _Post.update(Post);
+            return new SuccessResult();
+
         }
     }
 }

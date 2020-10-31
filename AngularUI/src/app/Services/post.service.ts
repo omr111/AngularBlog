@@ -39,4 +39,8 @@ export class PostService {
       this.loading=false;
     }))
   }
+  IncreaseViewCount(id:number){
+    let newUrl=`${this.url}/IncreaseViewedCount/${id}`;
+    return this.httpClient.get(newUrl);
+  }
 }

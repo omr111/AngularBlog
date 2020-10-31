@@ -44,12 +44,12 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
 
         public void removeByPattern(string pattern)
         {
-            var cacheEntriesCollectionDefinition = typeof(MemoryCache).GetProperty("EntriesCollection", System.Reflection.BindingFlags.Instance);
+            var cacheEntriesCollectionDefinition = typeof(MemoryCache).GetProperty("EntriesCollection", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             var cacheEntiesCollection = cacheEntriesCollectionDefinition.GetValue(_cache) as dynamic;
             List<ICacheEntry> cacheCollectionValues = new List<ICacheEntry>();
             foreach (var cacheItem in cacheEntiesCollection)
             {
-                ICacheEntry cacheItemValue = cacheItem.GetValue().GetProperty("Value").GetValue(cacheItem, null);
+                ICacheEntry cacheItemValue = cacheItem.GetType().GetProperty("Value").GetValue(cacheItem, null);
                 cacheCollectionValues.Add(cacheItemValue);
             }
             var regex = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);

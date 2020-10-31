@@ -21,6 +21,10 @@ const routes: Routes = [
         component: HomePageComponent,
       },
       {
+        path:"sayfa/:pageNumber",
+        component:HomePageComponent
+      },
+      {
         path: "iletisim",
         component: ContactComponent,
       },
@@ -28,10 +32,7 @@ const routes: Routes = [
         path: "hakkimizda",
         component: AboutUsComponent,
       },
-      {
-        path:"sayfa/:pageNumber",
-        component:HomePageComponent
-      },
+    
       {
         path:"makale/:title/:id",
         component:SinglePostComponent

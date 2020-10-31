@@ -15,6 +15,7 @@ namespace Business.Abstract
         IQueryable<Posts> getAll();
         IQueryable<Posts> getAllSearchedPosts(string searchText);
         IQueryable<Posts> getAllByCategoryId(int catId);
+         IDataResult<Posts> getOneByIdWithEntity(int id);
         IDataResult<PostDetailDto> getOneById(int id);
         IResult addPost(Posts Post);
         IResult updatePost(Posts Post);
